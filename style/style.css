@@ -22,6 +22,7 @@ html {
 
 body {
     font-family: 'Ubuntu', sans-serif;
+    overflow-x: hidden;
 }
 
 a {
@@ -203,6 +204,15 @@ nav ul.links a:hover {
     cursor: pointer;
 }
 
+/* ---- POPULAR ---- */
+
+.slider
+
+
+
+
+/* ---- RESPONSIVE ---- */
+
 @media (max-width: 768px) {
     .container {
         padding: 0 2rem;
@@ -221,9 +231,14 @@ nav ul.links a:hover {
         padding: min(10vh, 10rem) 2rem;
         z-index: 10;
         overflow-x: hidden;
-
+        transform: translateX(-100%);
+        transition: all .3s ease-out 50ms;
     }
-    
+
+    .links[data-visible="true"] {
+        transform: translateX(0%);
+    }
+
     .links.flex {
         flex-direction: column;
         justify-content: flex-start;
