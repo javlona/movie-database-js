@@ -1,1 +1,1 @@
-# movie-database-js
+# myMDB-js
