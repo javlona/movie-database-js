@@ -52,7 +52,7 @@ h1, h2 {
 /* ---- UTILITY ---- */
 
 .container {
-    max-width: 1440px;
+    max-width: 1330px;
     margin: 0 auto;
     padding: 0 4rem;
 }
@@ -148,4 +148,52 @@ nav ul.links a:hover {
 
 .navbar-right:hover .drop-content {
     display: block !important;
+}
+
+/* ---- HERO ---- */
+
+.hero .container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 30rem;
+    background: coral;
+    
+}
+
+.hero h1 {
+    font-size: 5rem;
+}
+
+.hero h2 {
+    font-size: 3.5rem;
+}
+
+.search-big {
+    position: relative;
+    margin: 2rem 0;
+}   
+
+.search-big input {
+    width: 90%;
+    padding: 1.5rem;
+    border: none;
+    border-radius: 3rem;
+    font-size: 2rem;
+}
+
+.search-big button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 10%;
+    right: 4rem;
+    height: 100%;
+    border-radius: 3rem;
+    border: none;
+    font-size: 2rem;
+    font-weight: 600;
+    background: linear-gradient(to right, #d4ff58, #e1ff85);
+    cursor: pointer;
 }
