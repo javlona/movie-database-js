@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap');
+
+:root {
+    --color-primary: #d4ff58;
+    --color-secondary: #FFCC1D;
+    --color-main-bg: #fff;
+    --color-dark-db: #15190a;
+}
+
+/* ---- GENERAL ---- */
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'Ubuntu', sans-serif;
+}
+
+a {
+    text-decoration: none;
+
+}
+
+li {
+    list-style: none;
+}
+
+img {
+    width: 100%;
+}
+
+h1 {
+    font-weight: 700;
+}
+
+h2 {
+    font-weight: 500;
+}
+
+h1, h2 {
+    line-height: 1.2;
+}
+
+/* ---- UTILITY ---- */
+
+.container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 4rem;
+}
+
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+/* ---- NAVBAR ---- */
+
+nav {
+    background: var(--color-dark-db);
+    height: 7rem;
+    position: relative;
+}
+
+nav .flex {
+    justify-content: space-between;
+}
+
+nav a{
+    color: #fff;
+    font-size: 1.6rem;
+}
+
+nav ul.links {
+    gap: 3rem;
+}
+
+nav ul.links a:hover {
+    color: var(--color-primary);
+    transition: all 0.3s;
+}
+
+.logo {
+    display: inline-flex;
+    align-items: center;
+    margin-right: 5rem;
+    font-size: 2rem;
+    font-weight: 500;
+    color: var(--color-primary);
+}
+
+.logo img {
+    margin-right: .5rem;
+    width: 4rem;
+}
+
+.menu {
+    position: absolute;
+    display: none;
+}
+
+.navbar-right {
+    position: relative;
+    
+}
+
+.dropbtn {
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+
+.drop-content {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    top: 5.5rem;
+    right: 8rem;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.drop-input {
+    padding: .5rem 1rem;
+    font-size: 1.8rem;
+    border: none;
+    border-radius: 2px;
+    background: rgba(212, 255, 88, .8);
+}
+
+.navbar-right:hover .drop-content {
+    display: block !important;
+}
