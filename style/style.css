@@ -116,6 +116,11 @@ nav ul.links a:hover {
 .menu {
     position: absolute;
     display: none;
+    font-size: 2rem;
+}
+
+.navbar-left {
+    position: relative;
 }
 
 .navbar-right {
@@ -157,7 +162,7 @@ nav ul.links a:hover {
     justify-content: center;
     flex-direction: column;
     height: 30rem;
-    background: coral;
+    background: linear-gradient(45deg, rgba(212, 255, 88, .5), rgba(37, 255, 84, .8)), url('/images/hero-wallpaper.jpg') no-repeat center -6rem /cover;
     
 }
 
@@ -175,7 +180,7 @@ nav ul.links a:hover {
 }   
 
 .search-big input {
-    width: 90%;
+    width: 100%;
     padding: 1.5rem;
     border: none;
     border-radius: 3rem;
@@ -187,13 +192,68 @@ nav ul.links a:hover {
     align-items: center;
     justify-content: center;
     position: absolute;
-    width: 10%;
-    right: 4rem;
+    width: 12rem;
+    right: 0;
     height: 100%;
     border-radius: 3rem;
     border: none;
-    font-size: 2rem;
+    font-size: 1.6rem;
     font-weight: 600;
-    background: linear-gradient(to right, #d4ff58, #e1ff85);
+    background: linear-gradient(to right, #d4ff58, #25ff54);
     cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 2rem;
+    }
+
+    .hero .container {
+        background: linear-gradient(45deg, rgba(212, 255, 88, .5), rgba(37, 255, 84, .8)), url('/images/hero-wallpaper.jpg') no-repeat center top /cover;
+        justify-content: flex-end;
+    }
+
+    .links {
+        position: fixed;
+        background: hsl(0 0% 0% / 0.9);
+        backdrop-filter: blur(1rem);
+        inset: 7rem 30% 0 0;
+        padding: min(10vh, 10rem) 2rem;
+        z-index: 10;
+        overflow-x: hidden;
+
+    }
+    
+    .links.flex {
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 3.5rem
+    }
+
+    .logo {
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%);
+    }
+
+    .menu {
+        display: block;
+    }
+
+    .hero h1 {
+        font-size: 3rem;
+    }
+    
+    .hero h2 {
+        font-size: 2rem;
+    }
+
+    .search-big {
+        margin-top: 4rem;
+    }
+
+    .search-big input {
+        padding: 1rem;
+        font-size: 1.6rem;
+    }
 }
