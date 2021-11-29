@@ -5,7 +5,8 @@
     --color-secondary: #FFCC1D;
     --color-main-bg: #fff;
     --color-dark-db: #15190a;
-    --color-text-grey: rgba(0, 0, 0, .6)
+    --color-text-grey: rgba(0, 0, 0, .6);
+    --main-width: 1330px;
 }
 
 /* ---- GENERAL ---- */
@@ -57,7 +58,7 @@ h2 {
 /* ---- UTILITY ---- */
 
 .container {
-    max-width: 1330px;
+    max-width: var(--main-width);
     margin: 0 auto;
     padding: 0 4rem;
 }
@@ -140,11 +141,12 @@ nav ul.links a:hover {
 
 
 .drop-content {
-    display: none;
+    display: block;
+    
     position: absolute;
     z-index: 1;
-    top: 5.5rem;
-    right: 8rem;
+    top: 7rem;
+    right: 10rem;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 }
 
@@ -154,6 +156,7 @@ nav ul.links a:hover {
     border: none;
     border-radius: 2px;
     background: rgba(212, 255, 88, .8);
+    width: var(--main-width);
 }
 
 .navbar-right:hover .drop-content {
