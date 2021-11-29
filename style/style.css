@@ -490,7 +490,7 @@ footer a {
     }
 
     .hero .container {
-        background: linear-gradient(45deg, rgba(212, 255, 88, .5), rgba(37, 255, 84, .8)), url('/images/hero-wallpaper.jpg') no-repeat center top /cover;
+        background: linear-gradient(45deg, rgba(212, 255, 88, .5), rgba(37, 255, 84, .8)), url('images/hero-wallpaper.jpg') no-repeat center top /cover;
         justify-content: flex-end;
     }
 
