@@ -5,11 +5,14 @@
     --color-secondary: #FFCC1D;
     --color-main-bg: #fff;
     --color-dark-db: #15190a;
+    --color-text-grey: rgba(0, 0, 0, .6)
 }
 
 /* ---- GENERAL ---- */
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -46,7 +49,8 @@ h2 {
     font-weight: 500;
 }
 
-h1, h2 {
+h1,
+h2 {
     line-height: 1.2;
 }
 
@@ -86,7 +90,7 @@ nav .flex {
     justify-content: space-between;
 }
 
-nav a{
+nav a {
     color: #fff;
     font-size: 1.6rem;
 }
@@ -126,7 +130,7 @@ nav ul.links a:hover {
 
 .navbar-right {
     position: relative;
-    
+
 }
 
 .dropbtn {
@@ -141,7 +145,7 @@ nav ul.links a:hover {
     z-index: 1;
     top: 5.5rem;
     right: 8rem;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 }
 
 .drop-input {
@@ -158,13 +162,13 @@ nav ul.links a:hover {
 
 /* ---- HERO ---- */
 
-.hero .container{
+.hero .container {
     display: flex;
     justify-content: center;
     flex-direction: column;
     height: 30rem;
     background: linear-gradient(45deg, rgba(212, 255, 88, .5), rgba(37, 255, 84, .8)), url('/images/hero-wallpaper.jpg') no-repeat center -6rem /cover;
-    
+
 }
 
 .hero h1 {
@@ -178,7 +182,7 @@ nav ul.links a:hover {
 .search-big {
     position: relative;
     margin: 2rem 0;
-}   
+}
 
 .search-big input {
     width: 100%;
@@ -206,7 +210,98 @@ nav ul.links a:hover {
 
 /* ---- POPULAR ---- */
 
-.slider
+.popular {
+    margin: 4rem 0;
+}
+
+.popular h2 {
+    font-size: 2.6rem;
+}
+
+.popular .container {
+    padding: 0;
+
+}
+
+.slider {
+    overflow-x: scroll;
+    padding: 4rem 0;
+    transition: height .5s linear;
+    position: relative;
+}
+
+.slider.flex {
+    gap: 2rem;
+    justify-content: flex-start;
+}
+
+.card {
+    height: 29rem;
+    width: 15rem;
+    flex-shrink: 0;
+    z-index: 1;
+}
+
+.card .card-img img {
+    border-radius: 8px;
+}
+
+.card .card-content h3 {
+    font-size: 1.6rem;
+    margin-top: 2rem;
+}
+
+.card .card-content p {
+    font-size: 1.5rem;
+    margin-top: .5rem;
+    color: var(--color-text-grey);
+}
+
+.trending h2,  .popular h2 {
+    padding-inline: 4rem;
+}
+
+
+/* ==== TRENDING */
+
+.trending {
+    margin: 4rem 0;
+}
+
+.trending h2 {
+    font-size: 2.6rem;
+}
+
+.trending .container {
+    padding: 0;
+
+}
+
+
+/* ---- SCROLLBAR ---- */
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgb(202, 202, 202);
+    border-radius: 3px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(167, 167, 167);
+  }
+
 
 
 
@@ -258,7 +353,7 @@ nav ul.links a:hover {
     .hero h1 {
         font-size: 3rem;
     }
-    
+
     .hero h2 {
         font-size: 2rem;
     }
@@ -270,5 +365,9 @@ nav ul.links a:hover {
     .search-big input {
         padding: 1rem;
         font-size: 1.6rem;
+    }
+
+    .trending h2,  .popular h2 {
+        padding-inline: 2rem;
     }
 }
