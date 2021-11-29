@@ -131,7 +131,7 @@ nav ul.links a:hover {
 
 .navbar-right {
     position: relative;
-
+    width: 100%;
 }
 
 .dropbtn {
@@ -141,12 +141,12 @@ nav ul.links a:hover {
 
 
 .drop-content {
-    display: block;
-    
+    display: none;
     position: absolute;
     z-index: 1;
     top: 7rem;
-    right: 10rem;
+    right: 0;
+    left: 0;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 }
 
@@ -155,8 +155,8 @@ nav ul.links a:hover {
     font-size: 1.8rem;
     border: none;
     border-radius: 2px;
-    background: rgba(212, 255, 88, .8);
-    width: var(--main-width);
+    background: rgba(255, 255, 255, 1);
+    width: 100%;
 }
 
 .navbar-right:hover .drop-content {
