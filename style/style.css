@@ -261,6 +261,37 @@ nav ul.links a:hover {
     padding-inline: 4rem;
 }
 
+/* ---- NOW PLAYING ==== */
+
+.now-playing {
+    height: 45rem;
+}
+
+.now-playing .container {
+    gap: 2.5rem;
+    padding: 0;
+    background: #BC2E2E;
+}
+
+.now-left {
+    height: 100%;
+    
+}
+
+.now-left img {
+    width: auto;
+}
+
+.now-right h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+.now-right p{
+    font-size: 1.6rem;
+    color: #fff;
+}
 
 /* ==== TRENDING */
 
