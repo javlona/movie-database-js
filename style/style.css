@@ -257,7 +257,8 @@ nav ul.links a:hover {
     color: var(--color-text-grey);
 }
 
-.trending h2,  .popular h2 {
+.trending h2,
+.popular h2 {
     padding-inline: 4rem;
 }
 
@@ -272,13 +273,13 @@ nav ul.links a:hover {
     gap: 2.5rem;
     padding: 0;
     background: #BC2E2E;
-    background: linear-gradient(-45deg, rgb(188, 46, 46, 0.7), rgba(188, 46, 46, 0.9)), 
-                url("/images/now-playing-back.jpg") center -15rem /cover;
+    background: linear-gradient(-45deg, rgb(188, 46, 46, 0.7), rgba(188, 46, 46, 0.9)),
+        url("/images/now-playing-back.jpg") center center /cover;
 }
 
 .now-left {
     height: 100%;
-    
+
 }
 
 .now-left img {
@@ -291,7 +292,7 @@ nav ul.links a:hover {
     color: #fff;
 }
 
-.now-right p{
+.now-right p {
     font-size: 1.6rem;
     color: #fff;
     line-height: 1.5;
@@ -329,7 +330,7 @@ nav ul.links a:hover {
     justify-content: center;
     align-items: center;
     height: 6rem;
-    width: 6rem;    
+    width: 6rem;
     background: rgba(0, 0, 0, .8);
     border-radius: 50%;
 }
@@ -342,7 +343,7 @@ nav ul.links a:hover {
     display: inline-flex;
 }
 
-.now-trailer a{
+.now-trailer a {
     color: #fff;
     font-size: 2rem;
     margin-left: 1.5rem;
@@ -387,7 +388,8 @@ footer .logo {
     margin-bottom: 2rem;
 }
 
-footer p, footer a {
+footer p,
+footer a {
     font-size: 1.3rem;
     color: #eee;
 }
@@ -396,42 +398,44 @@ footer p, footer a {
 /* LIKE BUTTON */
 
 .now-action input[type="checkbox"] {
-    height:1rem;
+    height: 1rem;
     width: 1rem;
     background-color: white;
-    position:relative;
-    outline:none;
+    position: relative;
+    outline: none;
     transform: rotate(45deg);
     -webkit-appearance: none;
     cursor: pointer;
 }
-.now-action input[type="checkbox"]:before{
+
+.now-action input[type="checkbox"]:before {
     position: absolute;
     content: "";
     background-color: white;
     height: 60%;
-    width:100%;
-    top:-59%;
+    width: 100%;
+    top: -59%;
     border-radius: 75px 75px 0 0;
 }
-.now-action input[type="checkbox"]:after{
+
+.now-action input[type="checkbox"]:after {
     position: absolute;
     content: "";
     background-color: white;
     height: 60%;
-    width:100%;
-    transform:rotate(-90deg);
+    width: 100%;
+    transform: rotate(-90deg);
     border-radius: 75px 75px 0 0;
     top: 20%;
     right: 80%;
-    
-}
-.now-action input[type="checkbox"]:checked,
-.now-action input:checked[type="checkbox"]:before,
-.now-action input:checked[type="checkbox"]:after{
-    background-color: #fe0f42;
+
 }
 
+.now-action input[type="checkbox"]:checked,
+.now-action input:checked[type="checkbox"]:before,
+.now-action input:checked[type="checkbox"]:after {
+    background-color: #fe0f42;
+}
 
 
 /* ---- SCROLLBAR ---- */
@@ -440,29 +444,41 @@ footer p, footer a {
 ::-webkit-scrollbar {
     width: 10px;
     height: 10px;
-  }
-  
-  /* Track */
-  ::-webkit-scrollbar-track {
+}
+
+/* Track */
+::-webkit-scrollbar-track {
     background: transparent;
-  }
-  
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
     background: rgb(202, 202, 202);
     border-radius: 3px;
-  }
-  
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
     background: rgb(167, 167, 167);
-  }
+}
 
 
 
 
 
 /* ---- RESPONSIVE ---- */
+
+@media (max-width: 992px) {
+
+    .now-right h1 {
+        font-size: 2.5rem;
+    }
+
+    .overview p {
+        font-size: 1.4rem;
+    }
+}
+
 
 @media (max-width: 768px) {
     .container {
@@ -523,7 +539,13 @@ footer p, footer a {
         font-size: 1.6rem;
     }
 
-    .trending h2,  .popular h2 {
+    .trending h2,
+    .popular h2 {
         padding-inline: 2rem;
+    }
+
+
+    .now-playing .flex {
+        flex-direction: column;
     }
 }
