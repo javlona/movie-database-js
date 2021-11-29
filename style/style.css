@@ -481,6 +481,7 @@ footer a {
 
 
 @media (max-width: 768px) {
+
     .container {
         padding: 0 2rem;
     }
@@ -512,7 +513,7 @@ footer a {
         gap: 3.5rem
     }
 
-    .logo {
+    nav .logo {
         position: absolute;
         left: 50%;
         transform: translate(-50%);
@@ -544,8 +545,29 @@ footer a {
         padding-inline: 2rem;
     }
 
+    .now-playing {
+        height: auto;
+    }
 
     .now-playing .flex {
         flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 2rem;
+    }
+
+    .now-left {
+        height: 20rem;
+        width: 15rem;
+        aspect-ratio: 1;
+        margin-bottom: 3rem;
+    }
+
+    .now-left img {
+        width: 100%;
+    }
+
+    .now-right h1 {
+        text-align: center;
     }
 }
