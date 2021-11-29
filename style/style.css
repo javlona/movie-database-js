@@ -261,6 +261,7 @@ nav ul.links a:hover {
     padding-inline: 4rem;
 }
 
+
 /* ---- NOW PLAYING ==== */
 
 .now-playing {
@@ -369,6 +370,29 @@ nav ul.links a:hover {
 }
 
 
+/* ---- FOOTER ---- */
+
+footer {
+    background: var(--color-dark-db);
+    color: #fff;
+    padding: 4rem 0;
+}
+
+footer .flex {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+footer .logo {
+    margin-bottom: 2rem;
+}
+
+footer p, footer a {
+    font-size: 1.3rem;
+    color: #eee;
+}
+
+
 /* LIKE BUTTON */
 
 .now-action input[type="checkbox"] {
@@ -407,6 +431,8 @@ nav ul.links a:hover {
 .now-action input:checked[type="checkbox"]:after{
     background-color: #fe0f42;
 }
+
+
 
 /* ---- SCROLLBAR ---- */
 
