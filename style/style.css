@@ -298,10 +298,6 @@ nav ul.links a:hover {
     color: var(--color-dark-db);
 }
 
-.tabs a i {
-    margin-right: 5px;
-}
-
 .tabs .selector {
     height: 100%;
     display: inline-block;
@@ -317,6 +313,33 @@ nav ul.links a:hover {
     background: -webkit-linear-gradient(45deg, #d4ff58 0%, #25ff54 100%);
     background: linear-gradient(45deg, #d4ff58 0%, #25ff54 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#d4ff58', endColorstr='#25ff54', GradientType=1);
+}
+
+@media (max-width: 768px) {
+    .tabs {
+        display: none;
+        flex-direction: column;
+        position: relative;
+        font-size: 16px;
+        padding: 0px;
+        list-style: none;
+        background: #fff;
+        border-radius: 10px;
+        position: relative;
+        border: 1px solid #25ff54;
+    }
+    .tabs .selector {
+        
+        display: inline-block;
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        z-index: 1;
+        border-radius: 10px;  
+        transition-duration: 0.6s;
+        transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        background: #25ff54;
+    }
 }
 
 
