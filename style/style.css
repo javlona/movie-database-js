@@ -170,7 +170,7 @@ nav ul.links a:hover {
     justify-content: center;
     flex-direction: column;
     height: 30rem;
-    background: linear-gradient(45deg, rgba(212, 255, 88, .5), rgba(37, 255, 84, .8)), url('/images/hero-wallpaper.jpg') no-repeat center -6rem /cover;
+    background: linear-gradient(45deg, rgba(212, 255, 88, .5), rgba(37, 255, 84, .8)), url('../images/hero-wallpaper.jpg') no-repeat center -6rem /cover;
 
 }
 
@@ -277,7 +277,7 @@ nav ul.links a:hover {
     padding: 0;
     background: #BC2E2E;
     background: linear-gradient(-45deg, rgb(188, 46, 46, 0.7), rgba(188, 46, 46, 0.9)),
-        url("/images/now-playing-back.jpg") center center /cover;
+        url("../images/now-playing-back.jpg") center center /cover;
 }
 
 .now-left {
@@ -490,7 +490,7 @@ div::-webkit-scrollbar-thumb:hover {
     }
 
     .hero .container {
-        background: linear-gradient(45deg, rgba(212, 255, 88, .5), rgba(37, 255, 84, .8)), url('/images/hero-wallpaper.jpg') no-repeat center top /cover;
+        background: linear-gradient(45deg, rgba(212, 255, 88, .5), rgba(37, 255, 84, .8)), url('../images/hero-wallpaper.jpg') no-repeat center top /cover;
         justify-content: flex-end;
     }
 
