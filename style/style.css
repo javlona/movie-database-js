@@ -444,24 +444,24 @@ footer a {
 /* ---- SCROLLBAR ---- */
 
 /* width */
-::-webkit-scrollbar {
+div::-webkit-scrollbar {
     width: 10px;
     height: 10px;
 }
 
 /* Track */
-::-webkit-scrollbar-track {
+div::-webkit-scrollbar-track {
     background: transparent;
 }
 
 /* Handle */
-::-webkit-scrollbar-thumb {
+div::-webkit-scrollbar-thumb {
     background: rgb(202, 202, 202);
     border-radius: 3px;
 }
 
 /* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
+div::-webkit-scrollbar-thumb:hover {
     background: rgb(167, 167, 167);
 }
 
