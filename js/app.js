@@ -1,5 +1,5 @@
-// API url 
 
+// API url 
 const API_KEY = '5b1b515986ab2e1bc528fe6b762fd9a9'
 const popularUrl = `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=en-US&page=1`
 const nowPlayingUrl = `https://api.themoviedb.org/3/movie/now_playing?api_key=${API_KEY}&language=en-US&page=1`
@@ -23,10 +23,10 @@ const search = document.querySelector('#search')
 const searchBtn = document.querySelector('#searchBtn')
 const sliderPopular = document.querySelector('#popular')
 const sliderTrending = document.querySelector('#trending')
+const nowPlaying = document.querySelector('#playing')
 
 
-
-//fetch popular 
+// fetch popular into cards
 async function fetchPopular() {
 
     try {
@@ -44,14 +44,14 @@ async function fetchPopular() {
 
 }
 
-// fetch popular 
+// fetch now playing random
 async function fetchPopular() {
 
     try {
-        let response = await fetch(popularUrl)
-        let popularData = await response.json()
-        console.log(popularData)
-        popularData.results.forEach((item, index) => {
+        let response = await fetch(nowPlayingUrl)
+        let nowPlayingData = await response.json()
+        console.log(nowPlayingData)
+        nowPlayingData.results.forEach((item, index) => {
             let card = createCard(item.poster_path, item.title, item.release_date)
             sliderPopular.innerHTML += card
         })
@@ -62,7 +62,7 @@ async function fetchPopular() {
 
 }
 
-// fetch trending 
+// fetch trending into cards
 async function fetchTrending() {
 
     try {
@@ -81,7 +81,7 @@ async function fetchTrending() {
 }
 
 
-// fetch api
+// fetch search API
 async function fetchSearchMovie() {
     const searchUrl = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&language=en-US&query=${searchWord}`
 
@@ -117,7 +117,7 @@ searchBtn.addEventListener('click', (e) => {
     console.log(searchWord)
 })
 
-// load popular on DOM
+// load cards on DOM
 this.addEventListener('load', () => {
     fetchPopular()
     fetchTrending()
