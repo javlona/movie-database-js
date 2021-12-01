@@ -1,18 +1,39 @@
+// DOM elements
+const search = document.querySelector('#search')
+const searchBtn = document.querySelector('#searchBtn')
+const sliderPopular = document.querySelector('#popular')
+const sliderTrending = document.querySelector('#trending')
+const nowPlaying = document.querySelector('#playing')
+const nowImage = document.querySelector('#now-image')
+const nowTitle = document.querySelector('#now-title')
+const pg = document.querySelector('#pg')
+const nowRelYear = document.querySelector('#nowRelYear')
+const genre = document.querySelector('genre')
+const nowDuration = document.querySelector('nowDuration')
+
+
+
 // get random number to randomize first 5 pages
 const FIRST_5_PAGES = 5; 
-function randomPage() {
-    return Math.floor(Math.random() * FIRST_5_PAGES + 1)
+
+// there are 20 items in a page
+const TWENTY = 20; 
+
+function randomPage(count) {
+    return Math.floor(Math.random() * count + 1)
 }
 
-let random = randomPage()
-console.log(random)
+let random5 = randomPage(FIRST_5_PAGES)
+let random20 = randomPage(TWENTY)
+
 
 // API url 
 const API_KEY = '5b1b515986ab2e1bc528fe6b762fd9a9'
-const popularUrl = `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=en-US&page=${random}`
-const nowPlayingUrl = `https://api.themoviedb.org/3/movie/now_playing?api_key=${API_KEY}&language=en-US&page=${random}`
+const popularUrl = `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=en-US&page=${random5}`
+const nowPlayingUrl = `https://api.themoviedb.org/3/movie/now_playing?api_key=${API_KEY}&language=en-US&page=${random5}`
 const trendingUrl = `https://api.themoviedb.org/3/trending/movie/week?api_key=${API_KEY}`
 const imgPath = 'https://image.tmdb.org/t/p/w500'
+
 
 
 
@@ -29,13 +50,6 @@ const createCard = (url, title, date) => {
             </div>`
 }  
 
-
-// DOM elements
-const search = document.querySelector('#search')
-const searchBtn = document.querySelector('#searchBtn')
-const sliderPopular = document.querySelector('#popular')
-const sliderTrending = document.querySelector('#trending')
-const nowPlaying = document.querySelector('#playing')
 
 
 // fetch popular into cards
@@ -57,20 +71,46 @@ async function fetchPopular() {
 
 }
 
+let randomMovID;
+
 // fetch now playing random
 async function fetchNowPlaying() {
+    const movieUrl = `https://api.themoviedb.org/3/movie/${randomMovID}?api_key=${API_KEY}&language=en-US`
 
     try {
         let response = await fetch(nowPlayingUrl)
         let nowPlayingData = await response.json()
 
-        console.log(nowPlayingData.results[2])
+        // fetch a random movie from now playing
+        randomMovID = nowPlayingData.results[random20].id
+        console.log(randomMovID)
+        
+    } catch (error) {
+        console.log(error)
+    }
+
+    try {
+        let response = await fetch(movieUrl)
+        let movData = await response.json()
+
+        console.log(movData)
 
     } catch (error) {
         console.log(error)
     }
 
+    
 }
+  
+
+
+// fetch detailed random movie info to DOM
+async function fetchDetailedMovieToDOM() {
+
+    
+
+}
+
 
 // fetch trending into cards
 async function fetchTrending() {
@@ -129,10 +169,10 @@ searchBtn.addEventListener('click', (e) => {
 
 // load cards on DOM
 this.addEventListener('load', () => {
+    fetchNowPlaying()
     fetchPopular()
     fetchTrending()
-    fetchNowPlaying()
-
+    fetchDetailedMovieToDOM()
 })
 
 
