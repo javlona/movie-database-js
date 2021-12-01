@@ -1,4 +1,4 @@
-// randomizer
+// get random number to randomize first 5 pages
 const FIRST_5_PAGES = 5; 
 function randomPage() {
     return Math.floor(Math.random() * FIRST_5_PAGES + 1)
@@ -6,7 +6,6 @@ function randomPage() {
 
 let random = randomPage()
 console.log(random)
-
 
 // API url 
 const API_KEY = '5b1b515986ab2e1bc528fe6b762fd9a9'
@@ -47,6 +46,7 @@ async function fetchPopular() {
         let popularData = await response.json()
 
         popularData.results.forEach((item, index) => {
+            //console.log(item, item.id)
             let card = createCard(item.poster_path, item.title, item.release_date)
             sliderPopular.innerHTML += card
         })
@@ -63,11 +63,8 @@ async function fetchNowPlaying() {
     try {
         let response = await fetch(nowPlayingUrl)
         let nowPlayingData = await response.json()
-        console.log(nowPlayingData)
 
-        nowPlayingData.results.forEach((item, index) => {
-         
-        })
+        console.log(nowPlayingData.results[2])
 
     } catch (error) {
         console.log(error)
