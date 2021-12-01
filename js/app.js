@@ -116,9 +116,10 @@ constants.searchBtn.addEventListener('click', (e) => {
         searchWord = constants.search.value
         fetchSearchMovie()
         showSearched()
+        window.location.pathname = '/search.html'
     }
 
-    console.log(searchWord)
+    console.log(window)
 })
 
 // load cards on DOM
