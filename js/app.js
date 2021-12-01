@@ -8,9 +8,10 @@ const nowImage = document.querySelector('#now-image')
 const nowTitle = document.querySelector('#now-title')
 const pg = document.querySelector('#pg')
 const nowRelYear = document.querySelector('#nowRelYear')
-const genre = document.querySelector('genre')
-const nowDuration = document.querySelector('nowDuration')
-
+const genre = document.querySelector('#genre')
+const nowDuration = document.querySelector('#nowDuration')
+const tagline = document.querySelector('#tagline')
+const overview = document.querySelector('#overview')
 
 
 // get random number to randomize first 5 pages
@@ -71,16 +72,15 @@ async function fetchPopular() {
 
 }
 
-let randomMovID;
+var randomMovID;
 
 // fetch now playing random
 async function fetchNowPlaying() {
-    const movieUrl = `https://api.themoviedb.org/3/movie/${randomMovID}?api_key=${API_KEY}&language=en-US`
-
+    
     try {
         let response = await fetch(nowPlayingUrl)
-        let nowPlayingData = await response.json()
-
+        var nowPlayingData = await response.json()
+        
         // fetch a random movie from now playing
         randomMovID = nowPlayingData.results[random20].id
         console.log(randomMovID)
@@ -88,17 +88,26 @@ async function fetchNowPlaying() {
     } catch (error) {
         console.log(error)
     }
-
+    
+    const movieUrl = `https://api.themoviedb.org/3/movie/${randomMovID}?api_key=${API_KEY}&language=en-US`
+    
     try {
-        let response = await fetch(movieUrl)
-        let movData = await response.json()
+        let res = await fetch(movieUrl)
+        let movData = await res.json()
 
         console.log(movData)
+        nowImage.src = imgPath+movData.poster_path
+        nowTitle.innerHTML = movData.title
+        nowRelYear.innerHTML = movData.release_date
+        nowDuration.innerHTML = movData.runtime + "min"
+        nowGenre.innerHTML = `${movData.genres[0].name}, ${movData.genres[1].name}`
+        tagline.innerHTML = movData.tagline
+        overview.innerHTML = movData.overview
+        
 
     } catch (error) {
         console.log(error)
     }
-
     
 }
   
