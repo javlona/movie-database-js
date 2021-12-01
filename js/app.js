@@ -32,7 +32,8 @@ const API_KEY = '5b1b515986ab2e1bc528fe6b762fd9a9'
 const popularUrl = `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=en-US&page=${random5}`
 const nowPlayingUrl = `https://api.themoviedb.org/3/movie/now_playing?api_key=${API_KEY}&language=en-US&page=${random5}`
 const trendingUrl = `https://api.themoviedb.org/3/trending/movie/week?api_key=${API_KEY}`
-const imgPath = 'https://image.tmdb.org/t/p/w500'
+const imgPath300 = 'https://image.tmdb.org/t/p/w300'
+const imgPath500 = 'https://image.tmdb.org/t/p/w500'
 const imgPathBig = 'https://image.tmdb.org/t/p/w1280'
 
 
@@ -41,7 +42,7 @@ const imgPathBig = 'https://image.tmdb.org/t/p/w1280'
 const createCard = (url, title, date) => {
     return `<div class="card">
                 <div class="card-img">
-                    <img src="${imgPath+url}" alt="">
+                    <img src="${imgPath500+url}" alt="">
                 </div>
                 <div class="card-content">
                     <h3>${title}</h3>
@@ -95,7 +96,7 @@ async function fetchNowPlaying() {
         let movData = await res.json()
 
         console.log(movData)
-        nowImage.src = imgPath+movData.poster_path
+        nowImage.src = imgPath300+movData.poster_path
         nowTitle.innerHTML = movData.title
         nowRelYear.innerHTML = movData.release_date
         nowDuration.innerHTML = movData.runtime + "min"
@@ -103,11 +104,11 @@ async function fetchNowPlaying() {
         tagline.innerHTML = movData.tagline
         overview.innerHTML = movData.overview
        
-        nowPlaying.style.background = `
-        linear-gradient(-45deg, rgb(188, 46, 46, 0.7), rgba(188, 46, 46, 0.9)),
+        nowPlaying.style = `
+        background: linear-gradient(-45deg, rgb(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)),
         url(${imgPathBig}${movData.backdrop_path}) center center /cover;
         `
-        console.log(imgPathBig + movData.backdrop_path)
+        console.log(nowPlaying.style)
 
     } catch (error) {
         console.log(error)

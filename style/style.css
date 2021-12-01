@@ -327,12 +327,15 @@ nav ul.links a:hover {
     height: 45rem;
 }
 
+.now-playing .flex {
+    justify-content: flex-start;
+}
+
 .now-playing .container {
     gap: 2.5rem;
     padding: 0;
-    background: #BC2E2E;
-    background: linear-gradient(-45deg, rgb(188, 46, 46, 0.7), rgba(188, 46, 46, 0.9)),
-        url("../images/now-playing-back.jpg") center center /cover;
+    background: linear-gradient(-45deg, rgb(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9));
+    
 }
 
 .now-left {
