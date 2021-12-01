@@ -139,7 +139,7 @@ nav ul.links a:hover {
     cursor: pointer;
 }
 
-
+/* 
 .drop-content {
     display: none;
     position: absolute;
@@ -157,7 +157,7 @@ nav ul.links a:hover {
     border-radius: 2px;
     background: rgba(255, 255, 255, 1);
     width: 100%;
-}
+} */
 
 .navbar-right:hover .drop-content {
     display: block !important;
@@ -269,78 +269,56 @@ nav ul.links a:hover {
 
 .slider-tab.flex {
     justify-content: flex-start;
-
 }
 
-.tabs {
-    font-size: 16px;
-    padding: 0px;
-    list-style: none;
-    background: #fff;
-    display: inline-block;
-    border-radius: 50px;
-    position: relative;
-    border: 1px solid #25ff54;
-}
-
-.tabs a {
-    text-decoration: none;
-    color: #777;
-    text-transform: uppercase;
-    padding: 8px 18px;
-    display: inline-block;
-    position: relative;
-    z-index: 1;
-    transition-duration: 0.6s;
-}
-
-.tabs a.active {
+.dropbtn {
+    background: linear-gradient(45deg, #d4ff58, #25ff54);
     color: var(--color-dark-db);
+    padding: .6rem 1.3rem;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 20px;
+    z-index: 99 !important;
 }
 
-.tabs .selector {
-    height: 100%;
-    display: inline-block;
+.dropbtn:hover,
+.dropbtn:focus {
+    background-color: #afd14a;
+}
+
+.dropdown {
+    position: relative;
+    display: block;
+    
+}
+
+.dropdown-content {
+    display: none;
     position: absolute;
-    left: 0px;
-    top: 0px;
-    z-index: 1;
-    border-radius: 50px;  
-    transition-duration: 0.6s;
-    transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    background: #25ff54;
-    background: -moz-linear-gradient(45deg, #d4ff58 0%, #25ff54 100%);
-    background: -webkit-linear-gradient(45deg, #d4ff58 0%, #25ff54 100%);
-    background: linear-gradient(45deg, #d4ff58 0%, #25ff54 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#d4ff58', endColorstr='#25ff54', GradientType=1);
+    background: tomato;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 -12px 0 tomato;
+    left: 0;
+    right: -5rem;
+    z-index: 2;
 }
 
-@media (max-width: 768px) {
-    .tabs {
-        display: none;
-        flex-direction: column;
-        position: relative;
-        font-size: 16px;
-        padding: 0px;
-        list-style: none;
-        background: #fff;
-        border-radius: 10px;
-        position: relative;
-        border: 1px solid #25ff54;
-    }
-    .tabs .selector {
-        
-        display: inline-block;
-        position: absolute;
-        left: 0px;
-        top: 0px;
-        z-index: 1;
-        border-radius: 10px;  
-        transition-duration: 0.6s;
-        transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
-        background: #25ff54;
-    }
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
 }
+
+.dropdown a:hover {
+    background-color: #ddd;
+}
+
+.show {
+    display: block;
+}
+
 
 
 /* ---- NOW PLAYING ==== */
@@ -354,7 +332,7 @@ nav ul.links a:hover {
     padding: 0;
     background: #BC2E2E;
     background: linear-gradient(-45deg, rgb(188, 46, 46, 0.7), rgba(188, 46, 46, 0.9)),
-                url("../images/now-playing-back.jpg") center center /cover;
+        url("../images/now-playing-back.jpg") center center /cover;
 }
 
 .now-left {

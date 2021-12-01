@@ -1,10 +1,23 @@
+// randomizer
+const FIRST_5_PAGES = 5; 
+function randomPage() {
+    return Math.floor(Math.random() * FIRST_5_PAGES + 1)
+}
+
+let random = randomPage()
+console.log(random)
+
 
 // API url 
 const API_KEY = '5b1b515986ab2e1bc528fe6b762fd9a9'
-const popularUrl = `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=en-US&page=1`
-const nowPlayingUrl = `https://api.themoviedb.org/3/movie/now_playing?api_key=${API_KEY}&language=en-US&page=1`
+const popularUrl = `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=en-US&page=${random}`
+const nowPlayingUrl = `https://api.themoviedb.org/3/movie/now_playing?api_key=${API_KEY}&language=en-US&page=${random}`
 const trendingUrl = `https://api.themoviedb.org/3/trending/movie/week?api_key=${API_KEY}`
 const imgPath = 'https://image.tmdb.org/t/p/w500'
+
+
+
+// card ui function
 const createCard = (url, title, date) => {
     return `<div class="card">
                 <div class="card-img">
@@ -32,7 +45,7 @@ async function fetchPopular() {
     try {
         let response = await fetch(popularUrl)
         let popularData = await response.json()
-        console.log(popularData)
+
         popularData.results.forEach((item, index) => {
             let card = createCard(item.poster_path, item.title, item.release_date)
             sliderPopular.innerHTML += card
@@ -45,15 +58,15 @@ async function fetchPopular() {
 }
 
 // fetch now playing random
-async function fetchPopular() {
+async function fetchNowPlaying() {
 
     try {
         let response = await fetch(nowPlayingUrl)
         let nowPlayingData = await response.json()
         console.log(nowPlayingData)
+
         nowPlayingData.results.forEach((item, index) => {
-            let card = createCard(item.poster_path, item.title, item.release_date)
-            sliderPopular.innerHTML += card
+         
         })
 
     } catch (error) {
@@ -68,7 +81,7 @@ async function fetchTrending() {
     try {
         let response = await fetch(trendingUrl)
         let trendingData = await response.json()
-        console.log(trendingData)
+
         trendingData.results.forEach((item, index) => {
             let card = createCard(item.poster_path, item.title, item.release_date)
             sliderTrending.innerHTML += card
@@ -121,6 +134,8 @@ searchBtn.addEventListener('click', (e) => {
 this.addEventListener('load', () => {
     fetchPopular()
     fetchTrending()
+    fetchNowPlaying()
+
 })
 
 
@@ -142,3 +157,21 @@ menuToggle.addEventListener('click', () => {
 })
 
 
+//dropdown menu for slider
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+  }
+  
+  // Close the dropdown if the user clicks outside of it
+  window.onclick = function(event) {
+    if (!event.target.matches('.dropbtn')) {
+      var dropdowns = document.getElementsByClassName("dropdown-content");
+      var i;
+      for (i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains('show')) {
+          openDropdown.classList.remove('show');
+        }
+      }
+    }
+  }
