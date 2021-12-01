@@ -228,6 +228,7 @@ nav ul.links a:hover {
 
 .slider {
     overflow-x: scroll;
+    overflow-y: hidden; 
     padding: 4rem 0;
     transition: height .5s linear;
     position: relative;
@@ -560,7 +561,7 @@ div::-webkit-scrollbar-thumb:hover {
         z-index: 10;
         overflow-x: hidden;
         transform: translateX(-100%);
-        transition: all .3s ease-out 50ms;
+        transition: all .3s 50ms;
     }
 
     .links[data-visible="true"] {
