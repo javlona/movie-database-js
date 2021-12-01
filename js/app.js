@@ -3,7 +3,7 @@ const search = document.querySelector('#search')
 const searchBtn = document.querySelector('#searchBtn')
 const sliderPopular = document.querySelector('#popular')
 const sliderTrending = document.querySelector('#trending')
-const nowPlaying = document.querySelector('#playing')
+const nowPlaying = document.querySelector('.now-playing .container')
 const nowImage = document.querySelector('#now-image')
 const nowTitle = document.querySelector('#now-title')
 const pg = document.querySelector('#pg')
@@ -12,7 +12,6 @@ const genre = document.querySelector('#genre')
 const nowDuration = document.querySelector('#nowDuration')
 const tagline = document.querySelector('#tagline')
 const overview = document.querySelector('#overview')
-
 
 // get random number to randomize first 5 pages
 const FIRST_5_PAGES = 5; 
@@ -34,7 +33,7 @@ const popularUrl = `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY
 const nowPlayingUrl = `https://api.themoviedb.org/3/movie/now_playing?api_key=${API_KEY}&language=en-US&page=${random5}`
 const trendingUrl = `https://api.themoviedb.org/3/trending/movie/week?api_key=${API_KEY}`
 const imgPath = 'https://image.tmdb.org/t/p/w500'
-
+const imgPathBig = 'https://image.tmdb.org/t/p/w1280'
 
 
 
@@ -103,7 +102,12 @@ async function fetchNowPlaying() {
         nowGenre.innerHTML = `${movData.genres[0].name}, ${movData.genres[1].name}`
         tagline.innerHTML = movData.tagline
         overview.innerHTML = movData.overview
-        
+       
+        nowPlaying.style.background = `
+        linear-gradient(-45deg, rgb(188, 46, 46, 0.7), rgba(188, 46, 46, 0.9)),
+        url(${imgPathBig}${movData.backdrop_path}) center center /cover;
+        `
+        console.log(imgPathBig + movData.backdrop_path)
 
     } catch (error) {
         console.log(error)
