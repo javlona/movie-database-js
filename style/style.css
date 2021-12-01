@@ -524,7 +524,65 @@ div::-webkit-scrollbar-thumb:hover {
 }
 
 
+/* -------- SEARCH -------- */
 
+/* MAIN */
+
+.search {
+    margin-top: 3rem;
+}
+
+.search .flex {
+    align-items: flex-start;
+    gap: 3rem;
+}
+
+.search-cat {
+    min-width: 26rem;
+    border: 1px solid #eee;
+    border-radius: 1rem;
+}
+
+.search-cat .heading {
+    background: var(--color-primary);
+    padding: 2rem;
+    border-radius: 1rem 1rem 0 0;
+}
+
+.heading h3 {
+    font-size: 2rem;
+    color: #333;
+}
+
+.side-menu {
+    margin: 1rem 0;
+}
+
+.side-menu li {
+    font-size: 1.8rem;
+    padding: 1rem 2rem;
+}
+
+.side-menu li a {
+    color: #333;
+}
+
+.side-menu li:hover {
+    background: #eee;
+}
+
+.card-long {
+    border-radius: 1rem;
+    height: 141px;
+}   
+
+.card-long .card-img {
+    height: 141px;
+}
+
+.card-long img {
+    height: auto;
+}
 
 
 /* ---- RESPONSIVE ---- */
