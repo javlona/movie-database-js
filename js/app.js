@@ -88,7 +88,7 @@ async function fetchTrending() {
 async function fetchSearchMovie() {
     const searchUrl = searchMovieUrl(constants.API_KEY, constants.search.value)
 
-    try {
+    try {0
         let response = await fetch(searchUrl)
         return await response.json()
     } catch (error) {
