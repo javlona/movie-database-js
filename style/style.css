@@ -539,14 +539,48 @@ div::-webkit-scrollbar-thumb:hover {
 /* MAIN */
 
 .search {
+    margin-top: 7rem;
     min-height: calc(100vh - 70px - 221px);
-    padding-top: 3rem;
+    padding-top: 7rem;
 }
 
 .search .flex {
     align-items: flex-start;
     gap: 3rem;
 }
+.search-bar {
+    position: relative;
+    
+}
+
+.search-input {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    padding: 1rem 4rem;
+    border: none;
+    border-bottom: 1px solid rgb(202, 202, 202);
+    font-size: 1.6rem;
+    caret-color: rgb(177, 177, 177);
+}
+
+.search-input::placeholder {
+    font-style: italic;
+    color: #999;
+}
+
+.search-icon {
+    position: absolute;
+    top: 10px;
+    left: 8px;
+    z-index: 11;
+    font-size: 1.6rem;
+    color: #333;
+    
+}
+
+
 
 .search-cat {
     min-width: 26rem;
