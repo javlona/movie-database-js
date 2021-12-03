@@ -580,8 +580,6 @@ div::-webkit-scrollbar-thumb:hover {
     
 }
 
-
-
 .search-cat {
     min-width: 26rem;
     border: 1px solid #eee;
@@ -639,7 +637,7 @@ div::-webkit-scrollbar-thumb:hover {
 
 .card-details {
     display: flex;
-    gap: 1.5rem;
+    gap: 2rem;
     flex-flow: column;
     justify-content: center;
     padding: .5rem 1rem .5rem;
@@ -658,8 +656,14 @@ div::-webkit-scrollbar-thumb:hover {
 }
 
 .card-details .overview-text {
+	display: block;
+    height: 4rem;
     font-size: 1.4rem;
-
+    clear: both;
+	white-space: normal !important;
+	word-break: break-all;
+    overflow: hidden;
+    line-height: 1.9rem;
 }
 
 
