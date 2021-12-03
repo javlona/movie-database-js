@@ -86,7 +86,11 @@ h2 {
 nav {
     background: var(--color-dark-db);
     height: 7rem;
-    position: relative;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
 }
 
 nav .flex {
@@ -166,6 +170,10 @@ nav ul.links a:hover {
 }
 
 /* ---- HERO ---- */
+
+.hero {
+    margin-top: 7rem;
+}
 
 .hero .container {
     display: flex;
