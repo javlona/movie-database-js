@@ -647,6 +647,11 @@ div::-webkit-scrollbar-thumb:hover {
     color: #000;
     font-size: 1.6rem;
     font-weight: 500;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 
 .card-details .year {
@@ -656,14 +661,17 @@ div::-webkit-scrollbar-thumb:hover {
 }
 
 .card-details .overview-text {
-	display: block;
-    height: 4rem;
     font-size: 1.4rem;
     clear: both;
 	white-space: normal !important;
-	word-break: break-all;
-    overflow: hidden;
+	/* word-break:keep-all;
     line-height: 1.9rem;
+    text-align: justify; */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 
 
