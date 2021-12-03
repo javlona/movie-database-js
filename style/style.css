@@ -25,6 +25,8 @@ html {
 }
 
 body {
+    min-height: 100%;
+    height:auto;
     font-family: 'Ubuntu', sans-serif;
     overflow-x: hidden;
 }
