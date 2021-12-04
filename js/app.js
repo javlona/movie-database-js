@@ -31,6 +31,7 @@ async function fetchNowPlaying() {
         var nowPlayingData = await response.json()
         
         // fetch a random movie from now playing
+        console.log(constants.random20)
         randomMovID = nowPlayingData.results[constants.random20].id
         console.log(randomMovID)
         
@@ -49,14 +50,14 @@ async function fetchNowPlaying() {
         constants.nowTitle.innerHTML = movData.title
         constants.nowRelYear.innerHTML = movData.release_date
         constants.nowDuration.innerHTML = movData.runtime + "min"
-        constants.nowGenre.innerHTML = `${movData.genres[0].name}, ${movData.genres[1].name}`
         constants.tagline.innerHTML = movData.tagline
         constants.overview.innerHTML = movData.overview
-       
+        
         constants.nowPlaying.style = `
         background: linear-gradient(-45deg, rgb(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)),
         url(${constants.imgPathBig}${movData.backdrop_path}) center center /cover;
         `
+        constants.nowGenre.innerHTML = `${movData.genres[0].name}, ${movData.genres[1].name}`
 
     } catch (error) {
         console.log(error)

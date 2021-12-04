@@ -24,12 +24,13 @@ export const TWENTY = 20;
 
 // random numbers for url
 let random5 = randomPage(FIRST_5_PAGES)
+let random2 = randomPage(2)
 export let random20 = randomPage(TWENTY)
 
 // API url 
 export const API_KEY = '5b1b515986ab2e1bc528fe6b762fd9a9'
 export const popularUrl = `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=en-US&page=${random5}`
-export const nowPlayingUrl = `https://api.themoviedb.org/3/movie/now_playing?api_key=${API_KEY}&language=en-US&page=${random5}`
+export const nowPlayingUrl = `https://api.themoviedb.org/3/movie/now_playing?api_key=${API_KEY}&language=en-US&page=${1}`
 export const trendingUrl = `https://api.themoviedb.org/3/trending/movie/week?api_key=${API_KEY}`
 export const imgPath300 = 'https://image.tmdb.org/t/p/w300'
 export const imgPath500 = 'https://image.tmdb.org/t/p/w500'

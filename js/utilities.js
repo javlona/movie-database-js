@@ -1,7 +1,7 @@
 import { imgPath500 } from "./constants.js"
 
 export function randomPage(count) {
-    return Math.floor(Math.random() * count + 1)
+    return Math.floor(Math.random() * count)
 }
 
 
