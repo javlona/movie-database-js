@@ -10,7 +10,7 @@ async function fetchPopular() {
         let popularData = await response.json()
 
         popularData.results.forEach((item) => {
-            console.log(item, item.id)
+            // console.log(item, item.id)
             let card = createCard(item.poster_path, item.title, item.release_date)
             constants.sliderPopular.innerHTML += card
         })
