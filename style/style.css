@@ -357,6 +357,10 @@ nav ul.links a:hover {
     width: auto;
 }
 
+.now-right {
+    padding-right: 1.5rem;
+}
+
 .now-right h1 {
     font-size: 3rem;
     font-weight: 700;
@@ -389,7 +393,17 @@ nav ul.links a:hover {
     margin-top: 2rem;
 }
 
-.overview h4 {
+.now-playing .overview {
+    clear: both;
+	white-space: normal !important;
+    display: -webkit-box;
+    -webkit-line-clamp: 6;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.now-playing .overview h4 {
     font-size: 2rem;
     color: #fff;
     margin: 1rem 0;

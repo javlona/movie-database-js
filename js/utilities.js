@@ -1,9 +1,14 @@
 import { imgPath500 } from "./constants.js"
 
-export function randomPage(count) {
-    return Math.floor(Math.random() * count)
-}
+// export function randomPage(count) {
+//     return Math.floor(Math.random() * count)
+// }
 
+export function randomPage(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1) + min); //The maximum is inclusive and the minimum is inclusive
+  }
 
 // single movie url
 export let singleMovieUrl = (api, id) => `https://api.themoviedb.org/3/movie/${id}?api_key=${api}&language=en-US`

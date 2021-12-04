@@ -20,17 +20,17 @@ export const overview = document.querySelector('#overview')
 export const FIRST_5_PAGES = 5; 
 
 // there are 20 items in a page
-export const TWENTY = 20; 
+export const NINETEEN = 19; 
 
 // random numbers for url
-let random5 = randomPage(FIRST_5_PAGES)
-let random2 = randomPage(2)
-export let random20 = randomPage(TWENTY)
+let random5 = randomPage(1, FIRST_5_PAGES) // random pages from 1 to 5
+let random2 = randomPage(1, 2)
+export let random20 = randomPage(0, NINETEEN) // random movie between 0 to 19
 
 // API url 
 export const API_KEY = '5b1b515986ab2e1bc528fe6b762fd9a9'
 export const popularUrl = `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=en-US&page=${random5}`
-export const nowPlayingUrl = `https://api.themoviedb.org/3/movie/now_playing?api_key=${API_KEY}&language=en-US&page=${1}`
+export const nowPlayingUrl = `https://api.themoviedb.org/3/movie/now_playing?api_key=${API_KEY}&language=en-US&page=${random2}`
 export const trendingUrl = `https://api.themoviedb.org/3/trending/movie/week?api_key=${API_KEY}`
 export const imgPath300 = 'https://image.tmdb.org/t/p/w300'
 export const imgPath500 = 'https://image.tmdb.org/t/p/w500'

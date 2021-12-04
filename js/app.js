@@ -4,13 +4,13 @@ import { singleMovieUrl, searchMovieUrl, createCard } from "./utilities.js"
 
 // fetch popular into cards
 async function fetchPopular() {
-
+    console.log(constants.popularUrl) 
     try {
         let response = await fetch(constants.popularUrl)
         let popularData = await response.json()
 
         popularData.results.forEach((item) => {
-            //console.log(item, item.id)
+            console.log(item, item.id)
             let card = createCard(item.poster_path, item.title, item.release_date)
             constants.sliderPopular.innerHTML += card
         })
