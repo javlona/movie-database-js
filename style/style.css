@@ -7,7 +7,7 @@
     --color-dark-db: #15190a;
     --color-text-grey: rgba(0, 0, 0, .6);
     --main-width: 1330px;
-    --rating-color: #7fff00;
+    --70-above: #7fff00;
     --60-above: #fffb00;
     --60-below: #ff7300;
 }
@@ -292,17 +292,26 @@ nav ul.links a:hover {
     
 }
 
-.vote::before {
+.rating {
     position: absolute;
-    content: "";
-    left: 0;
-    right: 0;
+    bottom: -10px;
+    right: 2rem;
     width: 35px;
     height: 35px;
-    /* background: chartreuse; */
     border-radius: 50%;
     z-index: 8;
-    box-shadow: 0px 0px 0 2px inset var(--rating-color), 0px 0px 0 3px #333;
+}
+
+.best {
+    box-shadow: 0px 0px 0 2px inset var(--70-above), 0px 0px 0 3px #333;
+}
+
+.good {
+    box-shadow: 0px 0px 0 2px inset var(--60-above), 0px 0px 0 3px #333;
+}
+
+.worse {
+    box-shadow: 0px 0px 0 2px inset var(--60-below), 0px 0px 0 3px #333;
 }
 
 .vote p{
