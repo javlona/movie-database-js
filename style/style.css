@@ -250,10 +250,11 @@ nav ul.links a:hover {
 .slider.flex {
     gap: 2rem;
     justify-content: flex-start;
+    align-items: flex-start;
 }
 
 .card {
-    height: 29rem;
+    height: auto;
     width: 15rem;
     flex-shrink: 0;
     z-index: 1;
@@ -770,7 +771,7 @@ div::-webkit-scrollbar-thumb:hover {
 @media (max-width: 768px) {
 
     .container {
-        padding: 0 2rem;
+        padding: 0 1.5rem;
     }
 
     .hero .container {
@@ -811,11 +812,11 @@ div::-webkit-scrollbar-thumb:hover {
     }
 
     .hero h1 {
-        font-size: 3rem;
+        font-size: 4rem;
     }
 
     .hero h2 {
-        font-size: 2rem;
+        font-size: 2.8rem;
     }
 
     .search-big {
@@ -827,9 +828,13 @@ div::-webkit-scrollbar-thumb:hover {
         font-size: 1.6rem;
     }
 
+    .slider {
+        padding-left: 1.5rem;
+    }
+
     .trending h2,
     .popular h2 {
-        padding-inline: 2rem;
+        padding-inline: 1.5rem;
     }
 
     .now-playing {
