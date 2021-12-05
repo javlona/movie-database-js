@@ -424,7 +424,7 @@ nav ul.links a:hover {
     padding-right: 1.5rem;
 }
 
-.now-right h1 {
+.movie-title {
     font-size: 3rem;
     font-weight: 700;
     color: #fff;
@@ -749,6 +749,23 @@ div::-webkit-scrollbar-thumb:hover {
     -webkit-box-orient: vertical;
     text-overflow: ellipsis;
     overflow: hidden;
+}
+
+
+/* ---- MOVIE INFO ---- */
+
+.movie-info {
+    margin-top: 7rem;
+    padding: 4rem 0;
+}
+
+.movie-info .flex {
+    gap: 2rem;
+}
+
+.title-year {
+    opacity: .8;
+    font-weight: 400;
 }
 
 
