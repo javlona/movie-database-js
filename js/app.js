@@ -57,7 +57,7 @@ async function fetchNowPlaying() {
         background: linear-gradient(-45deg, rgb(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)),
         url(${constants.imgPathBig}${movData.backdrop_path}) center center /cover;
         `
-        constants.nowGenre.innerHTML = `${movData.genres[0].name}, ${movData.genres[1].name}`
+        constants.nowGenre.innerHTML = `${movData.genres[0].name}, ${movData.genres[1]?.name}`
 
     } catch (error) {
         console.log(error)
@@ -87,11 +87,12 @@ async function fetchTrending() {
 
 // fetch search API
 async function fetchSearchMovie() {
-    const searchUrl = searchMovieUrl(constants.API_KEY, constants.search.value)
+    const searchUrl = searchMovieUrl(constants.API_KEY, searchWord)
 
-    try {0
+    try {
         let response = await fetch(searchUrl)
         return await response.json()
+
     } catch (error) {
         console.log(error)
     }
@@ -100,7 +101,7 @@ async function fetchSearchMovie() {
 
 async function showSearched() {
     let response = await fetchSearchMovie()
-
+    
     
     console.log(response)
 }
@@ -114,10 +115,11 @@ constants.searchBtn.addEventListener('click', (e) => {
     if (constants.search.value === "") {
         alert("enter a word")
     } else {
+
         searchWord = constants.search.value
         fetchSearchMovie()
         showSearched()
-        window.location.pathname = '/search.html'
+        //window.location.pathname = '/search.html'
     }
 
     console.log(window)
