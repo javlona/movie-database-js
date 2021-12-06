@@ -409,7 +409,6 @@ nav ul.links a:hover {
     gap: 2.5rem;
     padding: 0;
     background: linear-gradient(-45deg, rgb(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9));
-
 }
 
 .now-left {
@@ -757,6 +756,25 @@ div::-webkit-scrollbar-thumb:hover {
 .movie-info {
     margin-top: 7rem;
     padding: 4rem 0;
+    background: linear-gradient(
+        105deg,
+        hsla(0, 0%, 0%, 0.9) 0%,
+        hsla(0, 0%, 9.62%, 0.898) 8.9%,
+        hsla(0, 0%, 18.88%, 0.893) 17.2%,
+        hsla(0, 0%, 27.77%, 0.885) 25%,
+        hsla(0, 0%, 36.28%, 0.874) 32.3%,
+        hsla(0, 0%, 44.39%, 0.861) 39.3%,
+        hsla(0, 0%, 52.09%, 0.846) 45.9%,
+        hsla(0, 0%, 59.37%, 0.829) 52.2%,
+        hsla(0, 0%, 66.21%, 0.812) 58.3%,
+        hsla(0, 0%, 72.6%, 0.795) 64.2%,
+        hsla(0, 0%, 78.5%, 0.777) 70.1%,
+        hsla(0, 0%, 83.91%, 0.759) 75.9%,
+        hsla(0, 0%, 88.8%, 0.742) 81.7%,
+        hsla(0, 0%, 93.13%, 0.727) 87.7%,
+        hsla(0, 0%, 96.88%, 0.712) 93.7%,
+        hsla(0, 0%, 100%, 0.7) 100%
+    );
 }
 
 .movie-info .flex {
@@ -768,6 +786,28 @@ div::-webkit-scrollbar-thumb:hover {
     font-weight: 400;
 }
 
+.poster-overview p {
+    font-size: 1.6rem;
+    color: #fff;
+    line-height: 1.5;
+}
+
+.poster-overview h4 {
+    font-size: 2rem;
+    color: #fff;
+    margin: 1rem 0;
+}
+
+.title ul {
+    display: flex;
+    gap: .5rem;
+}
+
+.title li {
+    color: #fff;
+    line-height: 1.5;
+    font-size: 1.6rem;
+}
 
 
 
