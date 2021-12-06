@@ -34,3 +34,12 @@ export const createCard = (url, title, date, vote) => {
 }  
 
 //export const createPeopleCard = (url, orgName, character) = 
+// check if there is genre
+export function genre(arr) {
+    if(arr.length < 1) return ""
+    else {
+        return arr
+            .map(item => item.name)
+            .join(", ")
+    } 
+}
