@@ -1,5 +1,5 @@
 import * as constants from './constants.js'
-import { singleMovieUrl, searchMovieUrl, createCard, genre } from "./utilities.js"
+import { singleMovieUrl, searchMovieUrl, movieCard, searchCard, genre } from "./utilities.js"
 
 
 // fetch popular into cards
@@ -11,7 +11,7 @@ async function fetchPopular() {
         console.log(popularData)
         popularData.results.forEach((item) => {
             // console.log(item, item.id)
-            let card = createCard(item.poster_path, item.title, item.release_date, item.vote_average)
+            let card = movieCard(item.poster_path, item.title, item.release_date, item.vote_average)
             constants.sliderPopular.innerHTML += card
         })
 
@@ -63,16 +63,15 @@ async function fetchNowPlaying() {
 }
 
 
-
 // fetch trending into cards
 async function fetchTrending() {
 
     try {
         let response = await fetch(constants.trendingUrl)
         let trendingData = await response.json()
-
+        console.log(trendingData)
         trendingData.results.forEach((item) => {
-            let card = createCard(item.poster_path, item.title, item.release_date)
+            let card = movieCard(item.poster_path, item.title, item.release_date, item.vote_average)
             constants.sliderTrending.innerHTML += card
         })
 
@@ -96,14 +95,15 @@ async function fetchSearchMovie() {
     }
 }
 
-
-async function showSearched() {
+// fetch results of searched word
+export async function showSearched() {
     let response = await fetchSearchMovie()
     
-    
-    console.log(response)
+    response.results.forEach((item) => {
+        let card = searchCard(item.poster_path, item.title, item.release_date, item.overview)
+        constants.searchResults.innerHTML += card
+    })
 }
-
 
 let searchWord;
 
@@ -115,6 +115,7 @@ constants.searchBtn.addEventListener('click', (e) => {
     } else {
 
         searchWord = constants.search.value
+        localStorage.setItem("searchWord", searchWord)
         fetchSearchMovie()
         showSearched()
         //window.location.pathname = '/search.html'
@@ -138,13 +139,13 @@ window.addEventListener('load', () => {
 const navLinks = document.querySelector('.links')
 const menuToggle = document.querySelector('#menu')
 
+// toggle menu by setting data-visible to true
 menuToggle.addEventListener('click', () => {
     const visible = navLinks.getAttribute("data-visible")
 
     if (visible === "false") {
         navLinks.setAttribute("data-visible", true)
 
-        console.log(visible)
     } else {
         navLinks.setAttribute("data-visible", false)
     }
