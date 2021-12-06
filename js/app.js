@@ -1,5 +1,5 @@
 import * as constants from './constants.js'
-import { singleMovieUrl, searchMovieUrl, createCard } from "./utilities.js"
+import { singleMovieUrl, searchMovieUrl, createCard, genre } from "./utilities.js"
 
 
 // fetch popular into cards
@@ -42,7 +42,7 @@ async function fetchNowPlaying() {
     try {
         let res = await fetch(movieUrl)
         let movData = await res.json()
-
+        console.log(movData)
         constants.nowImage.src = constants.imgPath300+movData.poster_path
         constants.nowTitle.innerHTML = movData.title
         constants.nowRelYear.innerHTML = movData.release_date
@@ -62,14 +62,6 @@ async function fetchNowPlaying() {
     
 }
 
-function genre(arr) {
-    if(arr.length < 1) return ""
-    else {
-        return arr
-            .map(item => item.name)
-            .join(", ")
-    } 
-}
 
 
 // fetch trending into cards
