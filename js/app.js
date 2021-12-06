@@ -54,12 +54,21 @@ async function fetchNowPlaying() {
         background: linear-gradient(-45deg, rgb(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)),
         url(${constants.imgPathBig}${movData.backdrop_path}) center center /cover;
         `
-        constants.nowGenre.innerHTML = `${movData.genres[0].name}, ${movData.genres[1]?.name}`
+        constants.nowGenre.innerHTML = genre(movData.genres)
 
     } catch (error) {
         console.log(error)
     }
     
+}
+
+function genre(arr) {
+    if(arr.length < 1) return ""
+    else {
+        return arr
+            .map(item => item.name)
+            .join(", ")
+    } 
 }
 
 
