@@ -781,6 +781,16 @@ div::-webkit-scrollbar-thumb:hover {
     gap: 2rem;
 }
 
+.poster-wrapper {
+    height: 100%;
+    
+}
+
+.poster-wrapper img {
+    width: auto;
+    border-radius: 8px;
+}
+
 .title-year {
     opacity: .8;
     font-weight: 400;
@@ -810,6 +820,18 @@ div::-webkit-scrollbar-thumb:hover {
 }
 
 
+/* ---- CAST ---- */
+
+.people-scroller.flex {
+    gap: 2rem;
+
+}
+
+
+
+.people-scroller. img{
+    width: auto;
+}
 
 /* ---- RESPONSIVE ---- */
 
