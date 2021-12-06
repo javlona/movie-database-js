@@ -18,10 +18,13 @@ export let searchMovieUrl = (api, key) => `https://api.themoviedb.org/3/search/m
 
 
 // card ui function
-export const createCard = (url, title, date) => {
+export const createCard = (url, title, date, vote) => {
     return `<div class="card">
                 <div class="card-img">
                     <img src="${imgPath500+url}" alt="">
+                    <div class="vote rating best">
+                        <p>${vote*10}<sup>%</sup></p>
+                    </div>
                 </div>
                 <div class="card-content">
                     <h3>${title}</h3>
@@ -29,3 +32,5 @@ export const createCard = (url, title, date) => {
                 </div>
             </div>`
 }  
+
+//export const createPeopleCard = (url, orgName, character) = 

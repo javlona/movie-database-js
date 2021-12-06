@@ -8,10 +8,10 @@ async function fetchPopular() {
     try {
         let response = await fetch(constants.popularUrl)
         let popularData = await response.json()
-
+        console.log(popularData)
         popularData.results.forEach((item) => {
             // console.log(item, item.id)
-            let card = createCard(item.poster_path, item.title, item.release_date)
+            let card = createCard(item.poster_path, item.title, item.release_date, item.vote_average)
             constants.sliderPopular.innerHTML += card
         })
 
@@ -31,9 +31,7 @@ async function fetchNowPlaying() {
         var nowPlayingData = await response.json()
         
         // fetch a random movie from now playing
-        console.log(constants.random20)
         randomMovID = nowPlayingData.results[constants.random20].id
-        console.log(randomMovID)
         
     } catch (error) {
         console.log(error)
@@ -45,7 +43,6 @@ async function fetchNowPlaying() {
         let res = await fetch(movieUrl)
         let movData = await res.json()
 
-        console.log(movData)
         constants.nowImage.src = constants.imgPath300+movData.poster_path
         constants.nowTitle.innerHTML = movData.title
         constants.nowRelYear.innerHTML = movData.release_date

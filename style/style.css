@@ -755,7 +755,7 @@ div::-webkit-scrollbar-thumb:hover {
 
 .movie-info {
     margin-top: 7rem;
-    padding: 4rem 0;
+    padding: 2.5rem 0;
     background: linear-gradient(
         105deg,
         hsla(0, 0%, 0%, 0.9) 0%,
@@ -822,16 +822,51 @@ div::-webkit-scrollbar-thumb:hover {
 
 /* ---- CAST ---- */
 
-.people-scroller.flex {
-    gap: 2rem;
-
+.cast {
+    margin: 4rem 0;
 }
 
+/* .people-scroller.flex {
+    gap: .3rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 2rem;
+} */
 
-
-.people-scroller. img{
-    width: auto;
+.cast .slider {
+    gap: .5rem;
 }
+
+.card-people {
+    margin: 1rem;
+    width: 14rem;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    /* box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px; */
+    flex-shrink: 0;
+}
+
+.card-people img {
+    border-radius: 8px 8px 0 0;
+    margin-bottom: 1.5rem;
+}
+
+.card-people .card-content {
+    padding: 0 1rem 1.5rem 1rem;
+}
+
+.card-content .name{
+   font-size: 1.4rem;
+   font-weight: 500;
+   padding-bottom: .4rem;
+}
+
+.card-content .cast-name {
+    font-size: 1.3rem;
+    opacity: .8;
+}
+
 
 /* ---- RESPONSIVE ---- */
 
