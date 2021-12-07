@@ -91,6 +91,9 @@ function searchButtonTrigger() {
     
         // open new window
         window.open('/search.html', '_blank')
+
+        //epmty input field
+        search.value = "";
     }
 }
 
