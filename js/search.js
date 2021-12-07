@@ -38,3 +38,7 @@ window.addEventListener('load', () => {
     showSearched()
 
 })
+
+
+// toggle menu by setting data-visible to true
+constants.menuToggle.addEventListener('click', () => toggler())

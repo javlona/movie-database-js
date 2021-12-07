@@ -81,20 +81,32 @@ async function fetchTrending() {
 
 }
 
-
-constants.searchBtn.addEventListener('click', (e) => {
-    e.preventDefault();
-
+// save seach value to LocalStorage and open new window
+function searchButtonTrigger() {
     if (constants.search.value === "") {
         alert("enter a word")
     } else {
         // save input value to localStorage
         localStorage.setItem("searchWord", constants.search.value)
-
+    
         // open new window
         window.open('/search.html', '_blank')
     }
+}
 
+// run on click
+constants.searchBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    searchButtonTrigger()
+})
+
+// run on enter
+constants.search.addEventListener('keyup', function (e) {
+    if (e.key === 'Enter') {
+
+      searchButtonTrigger()
+    }
 })
 
 // load cards on DOM

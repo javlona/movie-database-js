@@ -1,4 +1,5 @@
 import { imgPath500 } from "./constants.js"
+import * as constants from './constants.js'
 
 // random number between two values
 export function randomPage(min, max) {
