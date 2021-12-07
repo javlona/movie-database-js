@@ -1,5 +1,5 @@
 import * as constants from './constants.js'
-import { singleMovieUrl, searchMovieUrl, movieCard, searchCard, genre } from "./utilities.js"
+import { singleMovieUrl, movieCard, genre } from "./utilities.js"
 
 
 // fetch popular into cards
@@ -82,46 +82,19 @@ async function fetchTrending() {
 }
 
 
-// fetch search API
-async function fetchSearchMovie() {
-    const searchUrl = searchMovieUrl(constants.API_KEY, searchWord)
-
-    try {
-        let response = await fetch(searchUrl)
-        return await response.json()
-
-    } catch (error) {
-        console.log(error)
-    }
-}
-
-// fetch results of searched word
-export async function showSearched() {
-    let response = await fetchSearchMovie()
-    
-    response.results.forEach((item) => {
-        let card = searchCard(item.poster_path, item.title, item.release_date, item.overview)
-        constants.searchResults.innerHTML += card
-    })
-}
-
-let searchWord;
-
 constants.searchBtn.addEventListener('click', (e) => {
     e.preventDefault();
 
     if (constants.search.value === "") {
         alert("enter a word")
     } else {
+        // save input value to localStorage
+        localStorage.setItem("searchWord", constants.search.value)
 
-        searchWord = constants.search.value
-        localStorage.setItem("searchWord", searchWord)
-        fetchSearchMovie()
-        showSearched()
-        //window.location.pathname = '/search.html'
+        // open new window
+        window.open('/search.html', '_blank')
     }
 
-    console.log(window)
 })
 
 // load cards on DOM
