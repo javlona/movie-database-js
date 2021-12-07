@@ -1,4 +1,4 @@
-import {searchCard, searchMovieUrl} from "./utilities.js"
+import {searchCard, searchMovieUrl, toggler} from "./utilities.js"
 import * as constants from './constants.js'
 
 function getSearchedWord() {
