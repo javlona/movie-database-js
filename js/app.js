@@ -1,5 +1,5 @@
 import * as constants from './constants.js'
-import { singleMovieUrl, movieCard, genre, toggler } from "./utilities.js"
+import { singleMovieUrl, movieCard, getGenre, toggler, singleMovie } from "./utilities.js"
 
 
 // fetch popular into cards
@@ -42,6 +42,7 @@ async function fetchNowPlaying() {
     try {
         let res = await fetch(movieUrl)
         let movData = await res.json()
+
         console.log(movData)
         constants.nowImage.src = constants.imgPath300+movData.poster_path
         constants.nowTitle.innerHTML = movData.title
@@ -49,12 +50,18 @@ async function fetchNowPlaying() {
         constants.nowDuration.innerHTML = movData.runtime + "min"
         constants.tagline.innerHTML = movData.tagline
         constants.overview.innerHTML = movData.overview
+        constants.nowGenre.innerHTML = getGenre(movData.genres)
+
+        // for(let item in movData){
+        //     console.log(movData[item])
+        //     let movie = singleMovie(item.poster_path, item.title, item.release_date, item.runtime, item.tagline, item.overview, item.genres)
+        //     constants.nowPlaying.innerHTML += movie
+        // }
         
         constants.nowPlaying.style = `
         background: linear-gradient(-45deg, rgb(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)),
         url(${constants.imgPathBig}${movData.backdrop_path}) center center /cover;
         `
-        constants.nowGenre.innerHTML = genre(movData.genres)
 
     } catch (error) {
         console.log(error)
@@ -69,7 +76,8 @@ async function fetchTrending() {
     try {
         let response = await fetch(constants.trendingUrl)
         let trendingData = await response.json()
-        console.log(trendingData)
+
+        // get fetched data into cards
         trendingData.results.forEach((item) => {
             let card = movieCard(item.poster_path, item.title, item.release_date, item.vote_average)
             constants.sliderTrending.innerHTML += card
@@ -92,7 +100,7 @@ function searchButtonTrigger() {
         // open new window
         window.open('/search.html', '_blank')
 
-        //epmty input field
+        //empty input field
         search.value = "";
     }
 }
