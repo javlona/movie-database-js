@@ -57,3 +57,16 @@ export const searchCard = (url, title, date, overview) => {
                     </div>
                 </div>`
 }
+
+
+// menu toggler
+export const toggler = () => {
+    const visible = constants.navLinks.getAttribute("data-visible")
+
+    if (visible === "false") {
+        constants.navLinks.setAttribute("data-visible", true)
+
+    } else {
+        constants.navLinks.setAttribute("data-visible", false)
+    }
+}

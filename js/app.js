@@ -1,5 +1,5 @@
 import * as constants from './constants.js'
-import { singleMovieUrl, movieCard, genre } from "./utilities.js"
+import { singleMovieUrl, movieCard, genre, toggler } from "./utilities.js"
 
 
 // fetch popular into cards
@@ -107,19 +107,6 @@ window.addEventListener('load', () => {
 })
 
 
-
-// menu toggler
-const navLinks = document.querySelector('.links')
-const menuToggle = document.querySelector('#menu')
-
 // toggle menu by setting data-visible to true
-menuToggle.addEventListener('click', () => {
-    const visible = navLinks.getAttribute("data-visible")
+constants.menuToggle.addEventListener('click', () => toggler())
 
-    if (visible === "false") {
-        navLinks.setAttribute("data-visible", true)
-
-    } else {
-        navLinks.setAttribute("data-visible", false)
-    }
-})

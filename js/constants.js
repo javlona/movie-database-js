@@ -16,6 +16,8 @@ export const nowDuration = document.querySelector('#nowDuration')
 export const tagline = document.querySelector('#tagline')
 export const overview = document.querySelector('#overview')
 export const searchResults = document.querySelector('#searchResults')
+export const navLinks = document.querySelector('.links')
+export const menuToggle = document.querySelector('#menu')
 
 // get random number to randomize first 5 pages
 export const FIRST_5_PAGES = 5; 

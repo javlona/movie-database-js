@@ -2,7 +2,7 @@ import {searchCard, searchMovieUrl} from "./utilities.js"
 import * as constants from './constants.js'
 
 function getSearchedWord() {
-    return JSON.parse(localStorage.getItem("searchWord"))
+    return localStorage.searchWord
 }
 
 // fetch search API
@@ -18,17 +18,19 @@ async function fetchSearchMovie() {
     }
 }
 
-
 // fetch results of searched word
 async function showSearched() {
     let response = await fetchSearchMovie()
-    
+    console.log(response.results)
     response.results.forEach((item) => {
         let card = searchCard(item.poster_path, item.title, item.release_date, item.overview)
         constants.searchResults.innerHTML += card
     })
 }
-  
+
+// function isPosterAvbailable(arr) {
+//     if(arr.poster_path === null) return 
+// }
 
 window.addEventListener('load', () => {
 
