@@ -119,3 +119,6 @@ export let toggler = () => {
         constants.navLinks.setAttribute("data-visible", false)
     }
 }
+
+
+// like button

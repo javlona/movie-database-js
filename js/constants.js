@@ -35,7 +35,7 @@ export const API_KEY = '5b1b515986ab2e1bc528fe6b762fd9a9'
 export const popularUrl = `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=en-US&page=${random5}`
 export const nowPlayingUrl = `https://api.themoviedb.org/3/movie/now_playing?api_key=${API_KEY}&language=en-US&page=${random2}`
 export const trendingUrl = `https://api.themoviedb.org/3/trending/movie/week?api_key=${API_KEY}`
-export const creditsUrl = (id) => `https://api.themoviedb.org/3/movie/${id}/credits?api_key=${API_KEY}&language=en-US`
+
 
 // image paths
 export const imgPath300 = 'https://image.tmdb.org/t/p/w300'

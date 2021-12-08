@@ -110,6 +110,15 @@ function searchButtonTrigger() {
 //     e.target.
 // }
 
+//like button
+document.addEventListener('DOMContentLoaded', function() {
+    var likeButton = document.getElementById('like-button');
+    likeButton.addEventListener('click', function() {
+      window.lb = likeButton;
+      likeButton.classList.toggle('selected');
+    });
+  }, false);
+  
 
 // run on click
 constants.searchBtn.addEventListener('click', (e) => {
@@ -138,4 +147,5 @@ window.addEventListener('load', () => {
 
 // toggle menu by setting data-visible to true
 constants.menuToggle.addEventListener('click', () => toggler())
+
 

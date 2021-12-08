@@ -868,6 +868,100 @@ div::-webkit-scrollbar-thumb:hover {
     opacity: .8;
 }
 
+/* RECOMMENDATIONS */
+.recommendations .slider {
+    padding: 2rem 0;
+}
+
+.recommendations h2 {
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.card-rec {
+    overflow: hidden;
+}
+
+.card-rec img {
+    border-radius: 1rem;
+    vertical-align: middle;
+}
+
+.card-rec .image-content{
+    overflow: hidden;
+    position: relative;
+}
+
+.card-rec .movie-meta {
+    visibility: hidden;
+    position: absolute;
+    display: flex;
+    left: 0;
+    bottom: 0;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.8);
+    height: 3.2rem;
+    width: 100%;
+    border-radius: 0 0 1rem 1rem;
+}
+
+.card-rec:hover .movie-meta {
+    visibility: visible;
+
+}
+
+.movie-meta li {
+    font-size: 1.4rem;
+}
+
+.card-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-rec .card-content p {
+    margin-top: .6rem;
+    font-size: 1.4rem;
+    opacity: .9;
+}
+
+
+/* LIKE BUTTON */
+
+#like-button {
+    color: #888;
+    font-size: 1.5em;
+    /* font-family: "Heebo", sans-serif; */
+    background-color: transparent;
+    border-radius: 1em;
+    line-height: 1.2em;
+    cursor: pointer;
+    transition: color 150ms ease-in-out, background-color 150ms ease-in-out, transform 150ms ease-in-out;
+    outline: 0;
+    border: 0;
+  }
+  #like-button:hover {
+    color: rgb(163, 163, 163);
+  }
+  #like-button:active {
+    transform: scale(0.95);
+  }
+  #like-button.selected {
+    color: indianred;
+    /* background-color: indianred;
+    border-color: indianred; */
+  }
+  #like-button .heart-icon {
+    display: inline-block;
+    fill: currentColor;
+    width: 0.8em;
+    height: 0.8em;
+    margin-right: 0.2em;
+  }
+
 
 /* ---- RESPONSIVE ---- */
 
