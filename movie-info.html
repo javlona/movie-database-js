@@ -14,6 +14,9 @@
     <!-- main css -->
     <link rel="stylesheet" href="style/style.css">
 
+    <!-- movie info css -->
+    <link rel="stylesheet" href="style/movie-info.css">
+
     <!-- scripts -->
     <script type="module" src="js/movie_info.js" defer></script>
 
@@ -52,7 +55,7 @@
                 <img src="/images/now-playing-1.jpg" alt="">
             </div>
             <div class="poster-info-wrapper">
-                <div class="poster-conter">
+                <div class="poster-container">
                     <div class="title">
                         <h1 class="movie-title" id="posterTitle">Money Heist: From Tokyo to Berlin<span
                                 class=title-year> (2021)</span></h1>
@@ -65,11 +68,10 @@
                         </div>
                         <div class="poster-action">
                             <ul>
-                                <li class="vote rating best">
+                                <li class="vote-rating best">
                                     <p>68<sup>%</sup></p>
                                 </li>
                                 <li>User Score</li>
-                                <li>Like button</li>
                                 <li class="now-trailer"><a><i class="fas fa-play"></i> Play Trailer</a></li>
                             </ul>
                         </div>
@@ -80,6 +82,9 @@
                                 wants to live an honest life...but when he realizes the Feds are more corrupt than him,
                                 he must fight back to clear his name.</p>
                         </div>
+                        <button type="button" class="like-button" id="like-button">
+                            <svg class="heart-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M91.6 13A28.7 28.7 0 0 0 51 13l-1 1-1-1A28.7 28.7 0 0 0 8.4 53.8l1 1L50 95.3l40.5-40.6 1-1a28.6 28.6 0 0 0 0-40.6z"/></svg>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -88,13 +93,13 @@
     <section class="cast">
         <div class="container">
             <div class="slider flex">
-                <div class="card-people">
+                <!-- <div class="card-people">
                     <img src="/images/people-1.jpg" alt="">
                     <div class="card-content">
                         <p class=name id=name>Daniel Henney</p>
                         <p class=cast-name id="castName">Uncle Casey</p>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </section>

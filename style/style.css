@@ -28,8 +28,8 @@ html {
 }
 
 body {
-    
-    height:auto;
+
+    height: auto;
     font-family: 'Ubuntu', sans-serif;
     overflow-x: hidden;
 }
@@ -260,7 +260,7 @@ nav ul.links a:hover {
     z-index: 1;
 }
 
-.card .card-img{
+.card .card-img {
     position: relative;
 }
 
@@ -290,7 +290,6 @@ nav ul.links a:hover {
     height: 35px;
     background: #333;
     border-radius: 50%;
-    
 }
 
 .rating {
@@ -315,12 +314,13 @@ nav ul.links a:hover {
     box-shadow: 0px 0px 0 2px inset var(--60-below), 0px 0px 0 3px #333;
 }
 
-.vote p{
+.vote p {
     font-size: 1.4rem;
     font-weight: 500;
     color: #fff;
     z-index: 9;
 }
+
 .vote sup {
     font-size: .5rem;
 }
@@ -457,7 +457,7 @@ nav ul.links a:hover {
 
 .now-playing .overview {
     clear: both;
-	white-space: normal !important;
+    white-space: normal !important;
     display: -webkit-box;
     -webkit-line-clamp: 6;
     -webkit-box-orient: vertical;
@@ -469,17 +469,6 @@ nav ul.links a:hover {
     font-size: 2rem;
     color: #fff;
     margin: 1rem 0;
-}
-
-
-.like-button {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    height: 6rem;
-    width: 6rem;
-    background: rgba(0, 0, 0, .8);
-    border-radius: 50%;
 }
 
 .now-action {
@@ -655,7 +644,7 @@ div::-webkit-scrollbar-thumb:hover {
     z-index: 11;
     font-size: 1.6rem;
     color: #333;
-    
+
 }
 
 .search-cat {
@@ -741,8 +730,8 @@ div::-webkit-scrollbar-thumb:hover {
 .card-details .overview-text {
     font-size: 1.4rem;
     clear: both;
-	white-space: normal !important;
-	/* word-break:keep-all;
+    white-space: normal !important;
+    /* word-break:keep-all;
     line-height: 1.9rem;
     text-align: justify; */
     display: -webkit-box;
@@ -758,25 +747,23 @@ div::-webkit-scrollbar-thumb:hover {
 .movie-info {
     margin-top: 7rem;
     padding: 2.5rem 0;
-    background: linear-gradient(
-        105deg,
-        hsla(0, 0%, 0%, 0.9) 0%,
-        hsla(0, 0%, 9.62%, 0.898) 8.9%,
-        hsla(0, 0%, 18.88%, 0.893) 17.2%,
-        hsla(0, 0%, 27.77%, 0.885) 25%,
-        hsla(0, 0%, 36.28%, 0.874) 32.3%,
-        hsla(0, 0%, 44.39%, 0.861) 39.3%,
-        hsla(0, 0%, 52.09%, 0.846) 45.9%,
-        hsla(0, 0%, 59.37%, 0.829) 52.2%,
-        hsla(0, 0%, 66.21%, 0.812) 58.3%,
-        hsla(0, 0%, 72.6%, 0.795) 64.2%,
-        hsla(0, 0%, 78.5%, 0.777) 70.1%,
-        hsla(0, 0%, 83.91%, 0.759) 75.9%,
-        hsla(0, 0%, 88.8%, 0.742) 81.7%,
-        hsla(0, 0%, 93.13%, 0.727) 87.7%,
-        hsla(0, 0%, 96.88%, 0.712) 93.7%,
-        hsla(0, 0%, 100%, 0.7) 100%
-    );
+    background: linear-gradient(105deg,
+            hsla(0, 0%, 0%, 0.9) 0%,
+            hsla(0, 0%, 9.62%, 0.898) 8.9%,
+            hsla(0, 0%, 18.88%, 0.893) 17.2%,
+            hsla(0, 0%, 27.77%, 0.885) 25%,
+            hsla(0, 0%, 36.28%, 0.874) 32.3%,
+            hsla(0, 0%, 44.39%, 0.861) 39.3%,
+            hsla(0, 0%, 52.09%, 0.846) 45.9%,
+            hsla(0, 0%, 59.37%, 0.829) 52.2%,
+            hsla(0, 0%, 66.21%, 0.812) 58.3%,
+            hsla(0, 0%, 72.6%, 0.795) 64.2%,
+            hsla(0, 0%, 78.5%, 0.777) 70.1%,
+            hsla(0, 0%, 83.91%, 0.759) 75.9%,
+            hsla(0, 0%, 88.8%, 0.742) 81.7%,
+            hsla(0, 0%, 93.13%, 0.727) 87.7%,
+            hsla(0, 0%, 96.88%, 0.712) 93.7%,
+            hsla(0, 0%, 100%, 0.7) 100%);
 }
 
 .movie-info .flex {
@@ -785,6 +772,7 @@ div::-webkit-scrollbar-thumb:hover {
 
 .poster-wrapper {
     height: 100%;
+    position: relative;
 }
 
 .poster-wrapper img {
@@ -811,7 +799,8 @@ div::-webkit-scrollbar-thumb:hover {
 
 .title ul {
     display: flex;
-    gap: .5rem;
+    align-items: center;
+    gap: 1rem;
 }
 
 .title li {
@@ -836,6 +825,7 @@ div::-webkit-scrollbar-thumb:hover {
 
 .cast .slider {
     gap: .5rem;
+    padding: 1rem 0;
 }
 
 .card-people {
@@ -857,10 +847,10 @@ div::-webkit-scrollbar-thumb:hover {
     padding: 0 1rem 1.5rem 1rem;
 }
 
-.card-content .name{
-   font-size: 1.4rem;
-   font-weight: 500;
-   padding-bottom: .4rem;
+.card-content .name {
+    font-size: 1.4rem;
+    font-weight: 500;
+    padding-bottom: .4rem;
 }
 
 .card-content .cast-name {
@@ -892,7 +882,7 @@ div::-webkit-scrollbar-thumb:hover {
     vertical-align: middle;
 }
 
-.card-rec .image-content{
+.card-rec .image-content {
     overflow: hidden;
     position: relative;
 }
@@ -921,7 +911,7 @@ div::-webkit-scrollbar-thumb:hover {
     font-size: 1.4rem;
 }
 
-.card-content {
+.card-rec .card-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -945,34 +935,45 @@ div::-webkit-scrollbar-thumb:hover {
 
 #like-button {
     color: #888;
-    font-size: 1.5em;
+    font-size: 3rem;
     /* font-family: "Heebo", sans-serif; */
-    background-color: transparent;
+    background: rgba(0, 0, 0, .8);
     border-radius: 1em;
     line-height: 1.2em;
     cursor: pointer;
     transition: color 150ms ease-in-out, background-color 150ms ease-in-out, transform 150ms ease-in-out;
     outline: 0;
     border: 0;
-  }
-  #like-button:hover {
+    
+}
+
+#like-button:hover {
     color: rgb(163, 163, 163);
-  }
-  #like-button:active {
+}
+
+#like-button:active {
     transform: scale(0.95);
-  }
-  #like-button.selected {
+}
+
+#like-button.selected {
     color: indianred;
     /* background-color: indianred;
     border-color: indianred; */
-  }
-  #like-button .heart-icon {
-    display: inline-block;
+}
+
+#like-button .heart-icon {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
     fill: currentColor;
     width: 0.8em;
     height: 0.8em;
-    margin-right: 0.2em;
-  }
+}
+
+.like-button {
+    height: 6rem;
+    width: 6rem;
+}
 
 
 /* ---- RESPONSIVE ---- */
@@ -1095,8 +1096,8 @@ div::-webkit-scrollbar-thumb:hover {
     }
 
     .search .flex {
-       flex-direction: column;
-       gap: 2rem;
+        flex-direction: column;
+        gap: 2rem;
     }
 
     .search-cat {

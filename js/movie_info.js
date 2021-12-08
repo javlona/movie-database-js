@@ -1,5 +1,5 @@
 import * as constants from './constants.js'
-import {creditsUrl, recommendationUrl, recCard, Storage} from './utilities.js'
+import {creditsUrl, recommendationUrl, recCard, peopleCard, Storage} from './utilities.js'
 
 
 let movId;
@@ -22,6 +22,11 @@ async function fetchCredits() {
         let credits = await response.json()
         console.log(credits)
         
+        credits.cast.forEach((item) => {
+            let card = peopleCard(item.profile_path, item.name, item.character)
+            constants.sliderCast.innerHTML += card
+        })
+
     } catch (error) {
         console.log(error)
     }
@@ -44,5 +49,15 @@ async function fetchRecommended() {
     } catch (error) {
         console.log(error)
     }
-
 }
+
+//like button
+document.addEventListener('DOMContentLoaded', function() {
+    var likeButton = document.getElementById('like-button');
+    likeButton.addEventListener('click', function() {
+      //window.lb = likeButton;
+      likeButton.classList.toggle('selected');
+    });
+  }, false);
+
+

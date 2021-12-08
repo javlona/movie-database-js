@@ -1,4 +1,4 @@
-import {imgPath500, imgPath300, backdrop250} from "./constants.js"
+import {imgPath500, imgPath300, imgPath138, backdrop250} from "./constants.js"
 import * as constants from './constants.js'
 
 // random number between two values
@@ -109,11 +109,23 @@ export function singleMovie(url, title, date, runtime, tagline, overview, genre)
             </div>`
 }
 
+// movie credits cards ui
+export function peopleCard(url, orgName, character) {
+    return `<div class="card-people">
+                <img src="${imgPath138+url}" alt="${orgName}">
+                <div class="card-content">
+                    <p class=name id=name>${orgName}</p>
+                    <p class=cast-name id="castName">${character}</p>
+                </div>
+            </div>`
+}
+
+
 // recommended movies card
 export function recCard(url, date, title, vote) {
     return `<div class="card-rec">
                 <div class="image-content">
-                    <img src="${imgPath300+url}" alt="${title}">
+                    <img src="${backdrop250+url}" alt="${title}">
                     <ul class="movie-meta">
                         <li id=year class=year><i class="far fa-calendar-alt"></i> ${date}</li>
                         <li id=like class=like>
