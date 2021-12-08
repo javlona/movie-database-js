@@ -6,8 +6,8 @@ function getSearchedWord() {
 }
 
 // fetch search API
-async function fetchSearchMovie() {
-    const searchUrl = searchMovieUrl(constants.API_KEY, getSearchedWord())
+async function fetchSearchMovie(key) {
+    const searchUrl = searchMovieUrl(constants.API_KEY, key)
 
     try {
         let response = await fetch(searchUrl)
@@ -18,9 +18,10 @@ async function fetchSearchMovie() {
     }
 }
 
+
 // fetch results of searched word
 async function showSearched() {
-    let response = await fetchSearchMovie()
+    let response = await fetchSearchMovie(getSearchedWord())
     console.log(response.results)
     response.results.forEach((item) => {
         let card = searchCard(item.poster_path, item.title, item.release_date, item.overview)
@@ -28,15 +29,27 @@ async function showSearched() {
     })
 }
 
+
 // function isPosterAvbailable(arr) {
 //     if(arr.poster_path === null) return 
 // }
 
-window.addEventListener('load', () => {
 
+// load searched word
+window.addEventListener('load', () => {
+    
     getSearchedWord()
     showSearched()
+})
 
+
+// run on enter
+constants.search.addEventListener('keyup', function (e) {
+    if (e.key === 'Enter') {
+        console.log('working')
+        fetchSearchMovie(search.value)
+        showSearched()
+    }
 })
 
 
@@ -45,10 +58,10 @@ constants.menuToggle.addEventListener('click', () => toggler())
 
 
 //like button
-document.addEventListener('DOMContentLoaded', function() {
-    var likeButton = document.getElementById('like-button');
-    likeButton.addEventListener('click', function() {
-      window.lb = likeButton;
-      likeButton.classList.toggle('selected');
-    });
-  }, false);
+// document.addEventListener('DOMContentLoaded', function() {
+//     var likeButton = document.getElementById('like-button');
+//     likeButton.addEventListener('click', function() {
+//       window.lb = likeButton;
+//       likeButton.classList.toggle('selected');
+//     });
+//   }, false);
