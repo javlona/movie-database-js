@@ -1,5 +1,5 @@
 import * as constants from './constants.js'
-import {creditsUrl, recommendationUrl, recCard, peopleCard, Storage} from './utilities.js'
+import {creditsUrl, recommendationUrl, recCard, peopleCard, Storage, singleMovieUrl, singleMovie} from './utilities.js'
 
 
 let movId;
@@ -9,9 +9,31 @@ window.addEventListener('load', function(){
     //movId = Storage.get('movie')
     console.log(Storage.get('movie'))
     movId = localStorage.movie
+    singleMovieToUI()
     fetchRecommended()
     fetchCredits()
 })
+
+// single movie ui
+async function singleMovieToUI(){
+    const movieUrl = singleMovieUrl(constants.API_KEY, movId)
+    
+    try {
+        let response = await fetch(movieUrl)
+        let movData = await response.json()
+
+        let movie = singleMovie(movData.poster_path, movData.title, movData.release_date, movData.runtime, movData.tagline, movData.overview, movData.genres)
+        constants.posterContainer.innerHTML = movie
+        
+        constants.posterContainer.style = `
+        background: linear-gradient(-45deg, rgb(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)),
+        url(${constants.imgPathBig}${movData.backdrop_path}) center center /cover;
+        `
+
+    } catch (error) {
+        console.log(error)
+    }
+}
 
 
 // fetch movie credits for a particular movie

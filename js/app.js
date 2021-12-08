@@ -152,3 +152,5 @@ function goToInfo(id) {
     Storage.add("movie", id)
     window.open("/movie-info.html", "_blank")
 }
+
+window.goToInfo = goToInfo;
