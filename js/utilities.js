@@ -48,8 +48,8 @@ export class Storage {
 
 
 // movie card ui function
-export const movieCard = (url, title, date, vote) => {
-    return `<div class="card">
+export const movieCard = (url, title, date, vote, id ) => {
+    return `<div onclick="goToInfo(${id})" class="card">
                 <div class="card-img">
                     <img src="${imgPath500+url}" alt="${title}">
                     <div class="vote rating best">
@@ -64,8 +64,9 @@ export const movieCard = (url, title, date, vote) => {
 }
 
 // search result card ui 
-export const searchCard = (url, title, date, overview) => {
-    return `<div class="card-long">
+export const searchCard = (url, title, date, overview, id, info) => {
+    console.log(info, id);
+    return `<div onclick="${info(id)}" class="card-long">
                 <div class="card-img">
                     <img src="${imgPath500+url}" alt="${title}">
                 </div>
@@ -161,3 +162,11 @@ export let toggler = () => {
 
 
 // like button
+
+//
+export function goToInfo(id) {
+    Storage.add("movie", id)
+    window.open("/movie-info.html", "_blank")
+}
+
+// export {goToInfo}

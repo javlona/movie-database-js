@@ -1,8 +1,8 @@
-import {searchCard, searchMovieUrl, toggler} from "./utilities.js"
+import {searchCard, searchMovieUrl, toggler, Storage, goToInfo} from "./utilities.js"
 import * as constants from './constants.js'
 
 function getSearchedWord() {
-    return localStorage.searchWord
+    return Storage.get("searchWord")
 }
 
 // fetch search API
@@ -18,15 +18,20 @@ async function fetchSearchMovie(key) {
     }
 }
 
-
+console.log(goToInfo);
 // fetch results of searched word
-async function showSearched() {
-    let response = await fetchSearchMovie(getSearchedWord())
+async function showSearched(query) {
+    
+    let response = await fetchSearchMovie(query ? query : getSearchedWord())
     console.log(response.results)
+    searchResults.innerHTML = ""
+    console.log(response)
+    
     response.results.forEach((item) => {
-        let card = searchCard(item.poster_path, item.title, item.release_date, item.overview)
-        constants.searchResults.innerHTML += card
+        let card = searchCard(item.poster_path, item.title, item.release_date, item.overview, item.id, goToInfo)
+        searchResults.innerHTML += card
     })
+
 }
 
 
@@ -37,7 +42,7 @@ async function showSearched() {
 
 // load searched word
 window.addEventListener('load', () => {
-    
+    search.value = getSearchedWord()
     getSearchedWord()
     showSearched()
 })
@@ -46,9 +51,9 @@ window.addEventListener('load', () => {
 // run on enter
 constants.search.addEventListener('keyup', function (e) {
     if (e.key === 'Enter') {
-        console.log('working')
-        fetchSearchMovie(search.value)
-        showSearched()
+
+        showSearched(search.value)
+        Storage.add("searchWord", search.value)
     }
 })
 

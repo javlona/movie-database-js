@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="style/style.css">
 
     <!-- scripts -->
-    <script type="module" src="js/app.js" defer></script>
+    
 
     <!-- title -->
     <title>Movie DataBase App</title>
@@ -148,6 +148,11 @@
             <a href="https://github.com/javlona/myMDB-js" target="_blank">give it a star on Github &#11088;</a>
         </div>
     </footer>
-    
+    <script type="module" src="js/app.js" >
+        function goToInfo(id) {
+            Storage.add("movie", id)
+            window.open("/movie-info.html", "_blank")
+}
+    </script>
 </body>
 </html>

@@ -2,6 +2,7 @@ import * as constants from './constants.js'
 import { singleMovieUrl, movieCard, getGenre, toggler, singleMovie, Storage, creditsUrl } from "./utilities.js"
 
 
+
 // fetch popular into cards
 async function fetchPopular() {
 
@@ -11,7 +12,7 @@ async function fetchPopular() {
 
         popularData.results.forEach((item) => {
 
-            let card = movieCard(item.poster_path, item.title, item.release_date, item.vote_average)
+            let card = movieCard(item.poster_path, item.title, item.release_date, item.vote_average, item.id)
             constants.sliderPopular.innerHTML += card
         })
 
@@ -44,19 +45,16 @@ async function fetchNowPlaying() {
         let movData = await res.json()
 
         console.log(movData)
-        constants.nowImage.src = constants.imgPath300+movData.poster_path
-        constants.nowTitle.innerHTML = movData.title
-        constants.nowRelYear.innerHTML = movData.release_date
-        constants.nowDuration.innerHTML = movData.runtime + "min"
-        constants.tagline.innerHTML = movData.tagline
-        constants.overview.innerHTML = movData.overview
-        constants.nowGenre.innerHTML = getGenre(movData.genres)
+        // constants.nowImage.src = constants.imgPath300+movData.poster_path
+        // constants.nowTitle.innerHTML = movData.title
+        // constants.nowRelYear.innerHTML = movData.release_date
+        // constants.nowDuration.innerHTML = movData.runtime + "min"
+        // constants.tagline.innerHTML = movData.tagline
+        // constants.overview.innerHTML = movData.overview
+        // constants.nowGenre.innerHTML = getGenre(movData.genres)
 
-        // for(let item in movData){
-        //     console.log(movData[item])
-        //     let movie = singleMovie(item.poster_path, item.title, item.release_date, item.runtime, item.tagline, item.overview, item.genres)
-        //     constants.nowPlaying.innerHTML += movie
-        // }
+        let movie = singleMovie(movData.poster_path, movData.title, movData.release_date, movData.runtime, movData.tagline, movData.overview, movData.genres)
+        constants.nowPlaying.innerHTML = movie
         
         constants.nowPlaying.style = `
         background: linear-gradient(-45deg, rgb(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)),
@@ -110,6 +108,7 @@ function searchButtonTrigger() {
 //     e.target.
 // }
 
+
 //like button
 document.addEventListener('DOMContentLoaded', function() {
     var likeButton = document.getElementById('like-button');
@@ -148,4 +147,8 @@ window.addEventListener('load', () => {
 // toggle menu by setting data-visible to true
 constants.menuToggle.addEventListener('click', () => toggler())
 
-
+// open single movie on new page
+function goToInfo(id) {
+    Storage.add("movie", id)
+    window.open("/movie-info.html", "_blank")
+}
