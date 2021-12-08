@@ -14,6 +14,10 @@ export let singleMovieUrl = (api, id) => `https://api.themoviedb.org/3/movie/${i
 // search movie url
 export let searchMovieUrl = (api, key) => `https://api.themoviedb.org/3/search/movie?api_key=${api}&language=en-US&query=${key}`
 
+// movie credits url
+export let creditsUrl = (id) => `https://api.themoviedb.org/3/movie/${id}/credits?api_key=${API_KEY}&language=en-US`
+
+
 // check if there is genre in movie details
 export function getGenre(arr) {
     if (arr.length < 1) return ""
@@ -23,6 +27,22 @@ export function getGenre(arr) {
             .join(", ")
     }
 }
+
+// localStorage shortcut function
+export class Storage {
+    static get(key) {
+        return JSON.parse(localStorage.getItem(key))
+    }
+
+    static add(key, value){
+        return localStorage.setItem(key, JSON.stringify(value))
+    }
+
+    static delete(key){
+        localStorage.removeItem(key)
+    }
+}
+
 
 // movie card ui function
 export const movieCard = (url, title, date, vote) => {

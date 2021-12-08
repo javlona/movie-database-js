@@ -1,16 +1,16 @@
 import * as constants from './constants.js'
-import { singleMovieUrl, movieCard, getGenre, toggler, singleMovie } from "./utilities.js"
+import { singleMovieUrl, movieCard, getGenre, toggler, singleMovie, Storage, creditsUrl } from "./utilities.js"
 
 
 // fetch popular into cards
 async function fetchPopular() {
-    console.log(constants.popularUrl) 
+
     try {
         let response = await fetch(constants.popularUrl)
         let popularData = await response.json()
-        console.log(popularData)
+
         popularData.results.forEach((item) => {
-            // console.log(item, item.id)
+
             let card = movieCard(item.poster_path, item.title, item.release_date, item.vote_average)
             constants.sliderPopular.innerHTML += card
         })
@@ -95,7 +95,7 @@ function searchButtonTrigger() {
         alert("enter a word")
     } else {
         // save input value to localStorage
-        localStorage.setItem("searchWord", constants.search.value)
+        Storage.add("searchWord", constants.search.value)
     
         // open new window
         window.open('/search.html', '_blank')
@@ -104,6 +104,9 @@ function searchButtonTrigger() {
         search.value = "";
     }
 }
+
+function 
+
 
 // run on click
 constants.searchBtn.addEventListener('click', (e) => {
