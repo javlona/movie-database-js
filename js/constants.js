@@ -18,6 +18,7 @@ export const overview = document.querySelector('#overview')
 export const searchResults = document.querySelector('#searchResults')
 export const navLinks = document.querySelector('.links')
 export const menuToggle = document.querySelector('#menu')
+export const recommended = document.querySelector('#recommended')
 
 // get random number to randomize first 5 pages
 export const FIRST_5_PAGES = 5; 
@@ -41,4 +42,4 @@ export const trendingUrl = `https://api.themoviedb.org/3/trending/movie/week?api
 export const imgPath300 = 'https://image.tmdb.org/t/p/w300'
 export const imgPath500 = 'https://image.tmdb.org/t/p/w500'
 export const imgPathBig = 'https://image.tmdb.org/t/p/w1280'
-
+export const backdrop250 = 'https://www.themoviedb.org/t/p/w250_and_h141_face/'

@@ -1,4 +1,4 @@
-import {imgPath500, imgPath300} from "./constants.js"
+import {imgPath500, imgPath300, backdrop250} from "./constants.js"
 import * as constants from './constants.js'
 
 // random number between two values
@@ -15,7 +15,10 @@ export let singleMovieUrl = (api, id) => `https://api.themoviedb.org/3/movie/${i
 export let searchMovieUrl = (api, key) => `https://api.themoviedb.org/3/search/movie?api_key=${api}&language=en-US&query=${key}`
 
 // movie credits url
-export let creditsUrl = (id) => `https://api.themoviedb.org/3/movie/${id}/credits?api_key=${API_KEY}&language=en-US`
+export let creditsUrl = (id) => `https://api.themoviedb.org/3/movie/${id}/credits?api_key=${constants.API_KEY}&language=en-US`
+
+// similar(recommendation) movies url
+export let recommendationUrl = (id) => `https://api.themoviedb.org/3/movie/${id}/similar?api_key=${constants.API_KEY}&language=en-US&page=1`
 
 
 // check if there is genre in movie details
@@ -106,7 +109,31 @@ export function singleMovie(url, title, date, runtime, tagline, overview, genre)
             </div>`
 }
 
+// recommended movies card
+export function recCard(url, date, title, vote) {
+    return `<div class="card-rec">
+                <div class="image-content">
+                    <img src="${imgPath300+url}" alt="${title}">
+                    <ul class="movie-meta">
+                        <li id=year class=year><i class="far fa-calendar-alt"></i> ${date}</li>
+                        <li id=like class=like>
+                            <button type="button" id="like-button">
+                                <svg class="heart-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M91.6 13A28.7 28.7 0 0 0 51 13l-1 1-1-1A28.7 28.7 0 0 0 8.4 53.8l1 1L50 95.3l40.5-40.6 1-1a28.6 28.6 0 0 0 0-40.6z"/></svg>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+                <div class="card-content">
+                    <p class="title" id="title">${title}</p>
+                    <p class="rec-rating" id="recRating">${voteCalc(vote)}%</p>
+                </div>
+            </div>`
+}
 
+// vote calculator
+function voteCalc(num) {
+    return Math.round(num * 10)
+}
 
 // menu toggler
 export let toggler = () => {

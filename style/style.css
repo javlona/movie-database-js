@@ -869,6 +869,10 @@ div::-webkit-scrollbar-thumb:hover {
 }
 
 /* RECOMMENDATIONS */
+.recommendations {
+    margin: 4rem;
+}
+
 .recommendations .slider {
     padding: 2rem 0;
 }
@@ -880,6 +884,7 @@ div::-webkit-scrollbar-thumb:hover {
 
 .card-rec {
     overflow: hidden;
+    flex-shrink: 0;
 }
 
 .card-rec img {
@@ -926,6 +931,13 @@ div::-webkit-scrollbar-thumb:hover {
     margin-top: .6rem;
     font-size: 1.4rem;
     opacity: .9;
+}
+
+.card-rec .title {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 260px;
 }
 
 
