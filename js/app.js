@@ -105,7 +105,10 @@ function searchButtonTrigger() {
     }
 }
 
-function 
+// // open movie on new page
+// function movieInfo(e) {
+//     e.target.
+// }
 
 
 // run on click

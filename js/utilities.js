@@ -109,7 +109,7 @@ export function singleMovie(url, title, date, runtime, tagline, overview, genre)
 
 
 // menu toggler
-export const toggler = () => {
+export let toggler = () => {
     const visible = constants.navLinks.getAttribute("data-visible")
 
     if (visible === "false") {
