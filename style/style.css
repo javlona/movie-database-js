@@ -884,6 +884,7 @@ div::-webkit-scrollbar-thumb:hover {
 .card-rec {
     overflow: hidden;
     flex-shrink: 0;
+    cursor: pointer;
 }
 
 .card-rec img {

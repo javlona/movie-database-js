@@ -53,7 +53,7 @@ async function fetchNowPlaying() {
         // constants.overview.innerHTML = movData.overview
         // constants.nowGenre.innerHTML = getGenre(movData.genres)
 
-        let movie = singleMovie(movData.poster_path, movData.title, movData.release_date, movData.runtime, movData.tagline, movData.overview, movData.genres)
+        let movie = singleMovie(movData.poster_path, movData.title, movData.release_date, movData.runtime, movData.tagline, movData.overview, movData.genres, movData.id)
         constants.nowPlaying.innerHTML = movie
         
         constants.nowPlaying.style = `
@@ -150,7 +150,7 @@ constants.menuToggle.addEventListener('click', () => toggler())
 // open single movie on new page
 function goToInfo(id) {
     Storage.add("movie", id)
-    window.open("/movie-info.html", "_blank")
+    window.open("/movie-info.html", "_self")
 }
 
 window.goToInfo = goToInfo;

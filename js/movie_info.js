@@ -22,12 +22,12 @@ async function singleMovieToUI(){
         let response = await fetch(movieUrl)
         let movData = await response.json()
 
-        let movie = singleMovie(movData.poster_path, movData.title, movData.release_date, movData.runtime, movData.tagline, movData.overview, movData.genres)
+        let movie = singleMovie(movData.poster_path, movData.title, movData.release_date, movData.runtime, movData.tagline, movData.overview, movData.genres, movData.id)
         constants.posterContainer.innerHTML = movie
         
         constants.movieInfo.style = `
         background: linear-gradient(-45deg, rgb(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)),
-        url(${constants.imgPathBig}${movData.backdrop_path}) center center /cover;
+        url(${constants.backdropBig}${movData.backdrop_path}) center center /cover;
         `
 
     } catch (error) {

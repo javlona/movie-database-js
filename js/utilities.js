@@ -84,12 +84,12 @@ export const searchCard = (url, title, date, overview, id, info) => {
 
 
 // detailed single movie ui
-export function singleMovie(url, title, date, runtime, tagline, overview, genre) {
+export function singleMovie(url, title, date, runtime, tagline, overview, genre, id) {
     return `<div class="now-left">
-                <img id="now-image" src="${imgPath300+url}" alt="${title}">
+                <img id="now-image" src="${imgPath300+url}" alt="${title}" onclick="goToInfo(${id})">
             </div>
             <div class="now-right">
-                <h1 class="movie-title" id="now-title">${title}</h1>
+                <h1 class="movie-title" id="now-title" onclick="goToInfo(${id})">${title}</h1>
                 <div class="now-meta">
                     <p class="year" id="nowRelYear">${date}</p>
                     <p class="genre" id="nowGenre">${getGenre(genre)}</p>
@@ -166,5 +166,5 @@ export let toggler = () => {
 //
 export function goToInfo(id) {
     Storage.add("movie", id)
-    window.open("/movie-info.html", "_blank")
+    window.open("/movie-info.html", "_self")
 }
