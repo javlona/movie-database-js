@@ -1,5 +1,5 @@
 import * as constants from './constants.js'
-import {creditsUrl, recommendationUrl, recCard, peopleCard, Storage, singleMovieUrl, singleMovie, goToInfo} from './utilities.js'
+import {creditsUrl, recommendationUrl, recCard, peopleCard, Storage, singleMovieUrl, singleMovie, goToInfo, toggler} from './utilities.js'
 
 
 let movId;
@@ -78,6 +78,9 @@ async function fetchRecommended() {
     }
 }
 
+
+// toggle menu by setting data-visible to true
+constants.menuToggle.addEventListener('click', () => toggler())
 
 // tell window that function exists
 window.goToInfo = goToInfo;
