@@ -21,6 +21,7 @@ export const menuToggle = document.querySelector('#menu')
 export const recommended = document.querySelector('#recommended')
 export const sliderCast = document.querySelector('.cast .slider')
 export const posterContainer = document.querySelector('#poster-container')
+export const movieInfo = document.querySelector('.movie-info')
 
 // get random number to randomize first 5 pages
 export const FIRST_5_PAGES = 5; 

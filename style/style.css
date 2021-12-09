@@ -769,6 +769,12 @@ div::-webkit-scrollbar-thumb:hover {
             hsla(0, 0%, 100%, 0.7) 100%);
 }
 
+.movie-info .container {
+    width: 100%;
+    padding: 0;
+
+}
+
 .movie-info .flex {
     gap: 2rem;
 }

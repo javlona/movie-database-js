@@ -25,7 +25,7 @@ async function singleMovieToUI(){
         let movie = singleMovie(movData.poster_path, movData.title, movData.release_date, movData.runtime, movData.tagline, movData.overview, movData.genres)
         constants.posterContainer.innerHTML = movie
         
-        constants.posterContainer.style = `
+        constants.movieInfo.style = `
         background: linear-gradient(-45deg, rgb(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)),
         url(${constants.imgPathBig}${movData.backdrop_path}) center center /cover;
         `
