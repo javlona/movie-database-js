@@ -27,13 +27,19 @@ async function singleMovieToUI(){
         
         constants.movieInfo.style = `
         background: linear-gradient(-45deg, rgb(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)),
-        url(${constants.backdropBig}${movData.backdrop_path}) center center /cover;
+        url(${constants.backdropBig}${movData.backdrop_path}) top center /cover;
         `
 
     } catch (error) {
         console.log(error)
     }
 }
+
+
+// window size for responsive layout
+// function windowSizeImgChange(item) {
+//     if(window.innerWidth > 768) return item.
+
 
 
 // fetch movie credits for a particular movie
@@ -84,5 +90,3 @@ window.goToInfo = goToInfo;
 //       likeButton.classList.toggle('selected');
 //     });
 //   }, false);
-
-

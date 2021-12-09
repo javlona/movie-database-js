@@ -25,7 +25,38 @@
     z-index: 8;
 }
 
-#like-button {
-    /* margin-top: 2rem; */
-}
+/* #like-button {
+    margin-top: 2rem;
+}*/
 
+
+
+@media (max-width: 768px) {
+    .movie-info .flex {
+        flex-direction: column;
+        padding: 0 1.5rem;
+        align-items: flex-start;
+    }
+
+    .cast .slider {
+        gap: 1.5rem;
+    }
+
+    .cast .card-people {
+        margin: 0;
+    }
+
+    .recommendations {
+        margin: 4rem 0;
+    }
+
+    .movie-info .overview {
+        clear: both;
+        white-space: normal !important;
+        display: -webkit-box;
+        -webkit-line-clamp: 6;
+        -webkit-box-orient: vertical;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+}
