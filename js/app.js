@@ -74,10 +74,10 @@ async function fetchTrending() {
     try {
         let response = await fetch(constants.trendingUrl)
         let trendingData = await response.json()
-
+        console.log(trendingData)
         // get fetched data into cards
         trendingData.results.forEach((item) => {
-            let card = movieCard(item.poster_path, item.title, item.release_date, item.vote_average)
+            let card = movieCard(item.poster_path, item.title, item.release_date, item.vote_average, item.id)
             constants.sliderTrending.innerHTML += card
         })
 

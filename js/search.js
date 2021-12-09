@@ -1,4 +1,4 @@
-import {searchCard, searchMovieUrl, toggler, Storage, goToInfo} from "./utilities.js"
+import {searchCard, searchMovieUrl, toggler, Storage} from "./utilities.js"
 import * as constants from './constants.js'
 
 function getSearchedWord() {
@@ -18,7 +18,6 @@ async function fetchSearchMovie(key) {
     }
 }
 
-console.log(goToInfo);
 // fetch results of searched word
 async function showSearched(query) {
     
@@ -60,6 +59,15 @@ constants.search.addEventListener('keyup', function (e) {
 
 // toggle menu by setting data-visible to true
 constants.menuToggle.addEventListener('click', () => toggler())
+
+// open new window on click and save id of that movie
+function goToInfo(id) {
+    Storage.add("movie", id)
+    window.open("/movie-info.html", "_blank")
+}
+
+// tell window that function exists
+window.goToInfo = goToInfo;
 
 
 //like button

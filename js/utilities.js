@@ -66,7 +66,7 @@ export const movieCard = (url, title, date, vote, id ) => {
 // search result card ui 
 export const searchCard = (url, title, date, overview, id, info) => {
     console.log(info, id);
-    return `<div onclick="${info(id)}" class="card-long">
+    return `<div onclick="goToInfo(${id})" class="card-long">
                 <div class="card-img">
                     <img src="${imgPath500+url}" alt="${title}">
                 </div>
@@ -123,8 +123,8 @@ export function peopleCard(url, orgName, character) {
 
 
 // recommended movies card
-export function recCard(url, date, title, vote) {
-    return `<div class="card-rec">
+export function recCard(url, date, title, vote, id) {
+    return `<div onclick="goToInfo(${id})" class="card-rec">
                 <div class="image-content">
                     <img src="${backdrop250+url}" alt="${title}">
                     <ul class="movie-meta">

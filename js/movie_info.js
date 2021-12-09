@@ -1,5 +1,5 @@
 import * as constants from './constants.js'
-import {creditsUrl, recommendationUrl, recCard, peopleCard, Storage, singleMovieUrl, singleMovie} from './utilities.js'
+import {creditsUrl, recommendationUrl, recCard, peopleCard, Storage, singleMovieUrl, singleMovie, goToInfo} from './utilities.js'
 
 
 let movId;
@@ -7,8 +7,8 @@ let movId;
 // get movie id from local Storage
 window.addEventListener('load', function(){
     //movId = Storage.get('movie')
-    console.log(Storage.get('movie'))
-    movId = localStorage.movie
+
+    movId = Storage.get('movie')
     singleMovieToUI()
     fetchRecommended()
     fetchCredits()
@@ -42,7 +42,6 @@ async function fetchCredits() {
     try {
         let response = await fetch(creditsUrl(movId))
         let credits = await response.json()
-        console.log(credits)
         
         credits.cast.forEach((item) => {
             let card = peopleCard(item.profile_path, item.name, item.character)
@@ -62,9 +61,9 @@ async function fetchRecommended() {
     try {
         let response = await fetch(recommendationUrl(movId))
         let recommended = await response.json()
-        console.log(recommendationUrl(movId))
+        console.log(recommended)
         recommended.results.forEach((item) => {
-            let card = recCard(item.backdrop_path, item.release_date, item.title, item.vote_average)
+            let card = recCard(item.backdrop_path, item.release_date, item.title, item.vote_average, item.id)
             constants.recommended.innerHTML += card
         })
 
@@ -73,13 +72,17 @@ async function fetchRecommended() {
     }
 }
 
+
+// tell window that function exists
+window.goToInfo = goToInfo;
+
 //like button
-document.addEventListener('DOMContentLoaded', function() {
-    var likeButton = document.getElementById('like-button');
-    likeButton.addEventListener('click', function() {
-      window.lb = likeButton;
-      likeButton.classList.toggle('selected');
-    });
-  }, false);
+// document.addEventListener('DOMContentLoaded', function() {
+//     var likeButton = document.getElementById('like-button');
+//     likeButton.addEventListener('click', function() {
+//       window.lb = likeButton;
+//       likeButton.classList.toggle('selected');
+//     });
+//   }, false);
 
 
