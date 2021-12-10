@@ -48,9 +48,9 @@
     z-index: 8;
 }
 
-/* #like-button {
-    margin-top: 2rem;
-}*/
+#like {
+    z-index: 99;
+}
 
 
 

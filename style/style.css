@@ -946,14 +946,15 @@ div::-webkit-scrollbar-thumb:hover {
     color: #888;
     font-size: 3rem;
     /* font-family: "Heebo", sans-serif; */
-    background: rgba(0, 0, 0, .8);
+    background: transparent;
     border-radius: 1em;
     line-height: 1.2em;
     cursor: pointer;
     transition: color 150ms ease-in-out, background-color 150ms ease-in-out, transform 150ms ease-in-out;
     outline: 0;
     border: 0;
-
+    height: 3rem;
+    width: 3rem;
 }
 
 #like-button:hover {
@@ -966,8 +967,8 @@ div::-webkit-scrollbar-thumb:hover {
 
 #like-button.selected {
     color: indianred;
-    /* background-color: indianred;
-    border-color: indianred; */
+    /* background-color: indianred; */
+    border-color: indianred;
 }
 
 #like-button .heart-icon {
