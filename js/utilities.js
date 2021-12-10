@@ -54,7 +54,7 @@ export class Storage {
 
 // movie card ui function
 export const movieCard = (url, title, date, vote, id) => {
-    return `<div onclick="goToInfo(${id})" class="card">
+    return `<div onclick="goToInfo(${id})" class="card" data-id='${id}'>
                 <div class="card-img">
                     <img src="${imgPath500+url}" alt="${title}">
                     <div class="vote rating best">
