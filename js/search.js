@@ -1,4 +1,9 @@
-import {searchCard, searchMovieUrl, toggler, Storage} from "./utilities.js"
+import {
+    searchCard,
+    searchMovieUrl,
+    toggler,
+    Storage
+} from "./utilities.js"
 import * as constants from './constants.js'
 
 function getSearchedWord() {
@@ -20,24 +25,18 @@ async function fetchSearchMovie(key) {
 
 // fetch results of searched word
 async function showSearched(query) {
-    
+
     let response = await fetchSearchMovie(query ? query : getSearchedWord())
     console.log(response.results)
     searchResults.innerHTML = ""
     console.log(response)
-    
+
     response.results.forEach((item) => {
         let card = searchCard(item.poster_path, item.title, item.release_date, item.overview, item.id, goToInfo)
         searchResults.innerHTML += card
     })
 
 }
-
-
-// function isPosterAvbailable(arr) {
-//     if(arr.poster_path === null) return 
-// }
-
 
 // load searched word
 window.addEventListener('load', () => {
@@ -68,13 +67,3 @@ function goToInfo(id) {
 
 // tell window that function exists
 window.goToInfo = goToInfo;
-
-
-//like button
-// document.addEventListener('DOMContentLoaded', function() {
-//     var likeButton = document.getElementById('like-button');
-//     likeButton.addEventListener('click', function() {
-//       window.lb = likeButton;
-//       likeButton.classList.toggle('selected');
-//     });
-//   }, false);

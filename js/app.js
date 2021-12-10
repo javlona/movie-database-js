@@ -1,6 +1,14 @@
 import * as constants from './constants.js'
-import { singleMovieUrl, movieCard, getGenre, toggler, singleMovie, Storage, creditsUrl, searchButtonTrigger } from "./utilities.js"
-
+import {
+    singleMovieUrl,
+    movieCard,
+    getGenre,
+    toggler,
+    singleMovie,
+    Storage,
+    creditsUrl,
+    searchButtonTrigger
+} from "./utilities.js"
 
 
 // fetch popular into cards
@@ -26,45 +34,36 @@ var randomMovID;
 
 // fetch now playing random
 async function fetchNowPlaying() {
-    
+
     try {
         let response = await fetch(constants.nowPlayingUrl)
         var nowPlayingData = await response.json()
-        
+
         // fetch a random movie from now playing
         randomMovID = nowPlayingData.results[constants.random20].id
-        
+
     } catch (error) {
         console.log(error)
     }
-    
+
     const movieUrl = singleMovieUrl(constants.API_KEY, randomMovID)
-    
+
     try {
         let res = await fetch(movieUrl)
         let movData = await res.json()
 
-        console.log(movData)
-        // constants.nowImage.src = constants.imgPath300+movData.poster_path
-        // constants.nowTitle.innerHTML = movData.title
-        // constants.nowRelYear.innerHTML = movData.release_date
-        // constants.nowDuration.innerHTML = movData.runtime + "min"
-        // constants.tagline.innerHTML = movData.tagline
-        // constants.overview.innerHTML = movData.overview
-        // constants.nowGenre.innerHTML = getGenre(movData.genres)
-
         let movie = singleMovie(movData.poster_path, movData.title, movData.release_date, movData.runtime, movData.tagline, movData.overview, movData.genres, movData.id)
         constants.nowPlaying.innerHTML = movie
-        
+
+        // change background with backdrop image
         constants.nowPlaying.style = `
         background: linear-gradient(-45deg, rgb(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)),
         url(${constants.imgPathBig}${movData.backdrop_path}) center center /cover;
         `
-
     } catch (error) {
         console.log(error)
     }
-    
+
 }
 
 
@@ -87,21 +86,15 @@ async function fetchTrending() {
 
 }
 
-// // open movie on new page
-// function movieInfo(e) {
-//     e.target.
-// }
-
-
 //like button
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     var likeButton = document.getElementById('like-button');
-    likeButton.addEventListener('click', function() {
-      window.lb = likeButton;
-      likeButton.classList.toggle('selected');
+    likeButton.addEventListener('click', function () {
+        window.lb = likeButton;
+        likeButton.classList.toggle('selected');
     });
-  }, false);
-  
+}, false);
+
 
 // run search on click
 constants.searchBtn.addEventListener('click', (e) => {
@@ -114,13 +107,13 @@ constants.searchBtn.addEventListener('click', (e) => {
 constants.search.addEventListener('keyup', function (e) {
     if (e.key === 'Enter') {
 
-      searchButtonTrigger()
+        searchButtonTrigger()
     }
 })
 
 // load cards on DOM
 window.addEventListener('load', () => {
-    
+
     fetchNowPlaying()
     fetchPopular()
     fetchTrending()

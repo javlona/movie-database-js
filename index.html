@@ -1,22 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- fontawesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- main css -->
     <link rel="stylesheet" href="style/style.css">
 
     <!-- scripts -->
-    
+
 
     <!-- title -->
     <title>Movie DataBase App</title>
 </head>
+
 <body>
 
     <!-- NAVBAR -->
@@ -29,7 +33,7 @@
                     <li><a href="#!">Movies</a></li>
                     <li><a href="#!">Popular</a></li>
                     <li><a href="#!">Trending</a></li>
-                    <li><a href="#!">Now Playing</a></li>  
+                    <li><a href="#!">Now Playing</a></li>
                 </ul>
             </div>
             <div class="nav-right">
@@ -61,9 +65,9 @@
                 <div class="dropdown">
                     <button class="dropbtn" onclick="myFunction()">Streaming <i class="fas fa-caret-down"></i></button>
                     <div class="dropdown-content">
-                      <a href="#">Link 1</a>
-                      <a href="#">Link 2</a>
-                      <a href="#">Link 3</a>
+                        <a href="#">Link 1</a>
+                        <a href="#">Link 2</a>
+                        <a href="#">Link 3</a>
                     </div>
                 </div>
                 <!-- <div class="tabs">
@@ -76,19 +80,7 @@
             </div>
 
             <div class="slider flex" id="popular">
-                <!-- <div class="card">
-                    <div class="card-img">
-                        <img src="https://image.tmdb.org/t/p/w500/5VJSIAhSn4qUsg5nOj4MhQhF5wQ.jpg" alt="">
-                        <div class="vote rating best">
-                            <p>68<sup>%</sup></p>
-                        </div>
-                    </div>
-                    <div class="card-content">
-                        <h3>The Last Warrior: Root of Evil</h3>
-                        <p>2021-01-01</p>
-                    </div>
-                </div> -->
-                <!-- fetch API goes here -->
+                <!-- fetched API goes here -->
             </div>
         </div>
     </section>
@@ -110,11 +102,16 @@
                 <div class="overview">
                     <p class="slogan" id="tagline"></p>
                     <h4>Overview</h4>
-                    <p id="overview">A bank robber tries to turn himself in because he's falling in love and wants to live an honest life...but when he realizes the Feds are more corrupt than him, he must fight back to clear his name.</p>
+                    <p id="overview">A bank robber tries to turn himself in because he's falling in love and wants to
+                        live an honest life...but when he realizes the Feds are more corrupt than him, he must fight
+                        back to clear his name.</p>
                 </div>
                 <div class="now-action">
                     <button type="button" class="like-button" id="like-button">
-                        <svg class="heart-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M91.6 13A28.7 28.7 0 0 0 51 13l-1 1-1-1A28.7 28.7 0 0 0 8.4 53.8l1 1L50 95.3l40.5-40.6 1-1a28.6 28.6 0 0 0 0-40.6z"/></svg>
+                        <svg class="heart-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+                            <path
+                                d="M91.6 13A28.7 28.7 0 0 0 51 13l-1 1-1-1A28.7 28.7 0 0 0 8.4 53.8l1 1L50 95.3l40.5-40.6 1-1a28.6 28.6 0 0 0 0-40.6z" />
+                            </svg>
                     </button>
                     <div class="now-trailer">
                         <a><i class="fas fa-play"></i> Play Trailer</a>
@@ -148,11 +145,12 @@
             <a href="https://github.com/javlona/myMDB-js" target="_blank">give it a star on Github &#11088;</a>
         </div>
     </footer>
-    <script type="module" src="js/app.js" >
+    <script type="module" src="js/app.js">
         function goToInfo(id) {
             Storage.add("movie", id)
             window.open("/movie-info.html", "_blank")
 }
     </script>
 </body>
+
 </html>

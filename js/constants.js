@@ -1,4 +1,4 @@
-import { randomPage } from "./utilities.js"
+import {randomPage} from "./utilities.js"
 
 
 // DOM elements
@@ -26,10 +26,10 @@ export const posterContainer = document.querySelector('#poster-container')
 export const movieInfo = document.querySelector('.movie-info')
 
 // get random number to randomize first 5 pages
-export const FIRST_5_PAGES = 5; 
+export const FIRST_5_PAGES = 5;
 
 // there are 20 items in a page
-export const NINETEEN = 19; 
+export const NINETEEN = 19;
 
 // random numbers for url
 let random5 = randomPage(1, FIRST_5_PAGES) // random pages from 1 to 5

@@ -1,4 +1,9 @@
-import {imgPath500, imgPath300, imgPath138, backdrop250} from "./constants.js"
+import {
+    imgPath500,
+    imgPath300,
+    imgPath138,
+    backdrop250
+} from "./constants.js"
 import * as constants from './constants.js'
 
 // random number between two values
@@ -37,18 +42,18 @@ export class Storage {
         return JSON.parse(localStorage.getItem(key))
     }
 
-    static add(key, value){
+    static add(key, value) {
         return localStorage.setItem(key, JSON.stringify(value))
     }
 
-    static delete(key){
+    static delete(key) {
         localStorage.removeItem(key)
     }
 }
 
 
 // movie card ui function
-export const movieCard = (url, title, date, vote, id ) => {
+export const movieCard = (url, title, date, vote, id) => {
     return `<div onclick="goToInfo(${id})" class="card">
                 <div class="card-img">
                     <img src="${imgPath500+url}" alt="${title}">
@@ -150,7 +155,7 @@ export function searchButtonTrigger() {
     } else {
         // save input value to localStorage
         Storage.add("searchWord", constants.search.value)
-    
+
         // open new window
         window.open('/search.html', '_blank')
 

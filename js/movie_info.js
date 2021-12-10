@@ -1,11 +1,23 @@
 import * as constants from './constants.js'
-import {creditsUrl, recommendationUrl, recCard, peopleCard, Storage, singleMovieUrl, singleMovie, goToInfo, toggler, seachInputToggle, searchButtonTrigger} from './utilities.js'
+import {
+    creditsUrl,
+    recommendationUrl,
+    recCard,
+    peopleCard,
+    Storage,
+    singleMovieUrl,
+    singleMovie,
+    goToInfo,
+    toggler,
+    seachInputToggle,
+    searchButtonTrigger
+} from './utilities.js'
 
 
 let movId;
 
 // get movie id from local Storage
-window.addEventListener('load', function(){
+window.addEventListener('load', function () {
     //movId = Storage.get('movie')
 
     movId = Storage.get('movie')
@@ -15,16 +27,16 @@ window.addEventListener('load', function(){
 })
 
 // single movie ui
-async function singleMovieToUI(){
+async function singleMovieToUI() {
     const movieUrl = singleMovieUrl(constants.API_KEY, movId)
-    
+
     try {
         let response = await fetch(movieUrl)
         let movData = await response.json()
 
         let movie = singleMovie(movData.poster_path, movData.title, movData.release_date, movData.runtime, movData.tagline, movData.overview, movData.genres, movData.id)
         constants.posterContainer.innerHTML = movie
-        
+
         constants.movieInfo.style = `
         background: linear-gradient(-45deg, rgb(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)),
         url(${constants.backdropBig}${movData.backdrop_path}) top center /cover;
@@ -36,19 +48,13 @@ async function singleMovieToUI(){
 }
 
 
-// window size for responsive layout
-// function windowSizeImgChange(item) {
-//     if(window.innerWidth > 768) return item.
-
-
-
 // fetch movie credits for a particular movie
 async function fetchCredits() {
 
     try {
         let response = await fetch(creditsUrl(movId))
         let credits = await response.json()
-        
+
         credits.cast.forEach((item) => {
             let card = peopleCard(item.profile_path, item.name, item.character)
             constants.sliderCast.innerHTML += card
@@ -59,7 +65,6 @@ async function fetchCredits() {
     }
 
 }
-
 
 // fetch recommended movies
 async function fetchRecommended() {
@@ -82,14 +87,14 @@ async function fetchRecommended() {
 constants.search.addEventListener('keyup', function (e) {
     if (e.key === 'Enter') {
 
-      searchButtonTrigger()
+        searchButtonTrigger()
     }
 })
 
 
 // toggle menu by setting data-visible to true
 constants.menuToggle.addEventListener('click', () => toggler())
- 
+
 // smallSearch toggle
 constants.smallSearchBtn.addEventListener('click', () => seachInputToggle())
 
