@@ -1,5 +1,5 @@
 import * as constants from './constants.js'
-import {creditsUrl, recommendationUrl, recCard, peopleCard, Storage, singleMovieUrl, singleMovie, goToInfo, toggler} from './utilities.js'
+import {creditsUrl, recommendationUrl, recCard, peopleCard, Storage, singleMovieUrl, singleMovie, goToInfo, toggler, seachInputToggle, searchButtonTrigger} from './utilities.js'
 
 
 let movId;
@@ -78,9 +78,20 @@ async function fetchRecommended() {
     }
 }
 
+// run search on enter
+constants.search.addEventListener('keyup', function (e) {
+    if (e.key === 'Enter') {
+
+      searchButtonTrigger()
+    }
+})
+
 
 // toggle menu by setting data-visible to true
 constants.menuToggle.addEventListener('click', () => toggler())
+ 
+// smallSearch toggle
+constants.smallSearchBtn.addEventListener('click', () => seachInputToggle())
 
 // tell window that function exists
 window.goToInfo = goToInfo;

@@ -4,6 +4,8 @@ import { randomPage } from "./utilities.js"
 // DOM elements
 export const search = document.querySelector('#search')
 export const searchBtn = document.querySelector('#searchBtn')
+export const smallSearchBtn = document.querySelector('#smallSearchBtn')
+export const smallSearch = document.querySelector('#smallSearch')
 export const sliderPopular = document.querySelector('#popular')
 export const sliderTrending = document.querySelector('#trending')
 export const nowPlaying = document.querySelector('.now-playing .container')

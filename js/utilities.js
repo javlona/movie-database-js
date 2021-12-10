@@ -143,6 +143,22 @@ export function recCard(url, date, title, vote, id) {
             </div>`
 }
 
+// save seach value to LocalStorage and open new window
+export function searchButtonTrigger() {
+    if (constants.search.value === "") {
+        alert("enter a word")
+    } else {
+        // save input value to localStorage
+        Storage.add("searchWord", constants.search.value)
+    
+        // open new window
+        window.open('/search.html', '_blank')
+
+        //empty input field
+        search.value = "";
+    }
+}
+
 // vote calculator
 function voteCalc(num) {
     return Math.round(num * 10)
@@ -160,6 +176,11 @@ export let toggler = () => {
     }
 }
 
+// search menu hide
+export function seachInputToggle() {
+    constants.smallSearch.classList.toggle('active')
+    document.querySelector('input').focus()
+}
 
 // like button
 

@@ -1,5 +1,5 @@
 import * as constants from './constants.js'
-import { singleMovieUrl, movieCard, getGenre, toggler, singleMovie, Storage, creditsUrl } from "./utilities.js"
+import { singleMovieUrl, movieCard, getGenre, toggler, singleMovie, Storage, creditsUrl, searchButtonTrigger } from "./utilities.js"
 
 
 
@@ -87,22 +87,6 @@ async function fetchTrending() {
 
 }
 
-// save seach value to LocalStorage and open new window
-function searchButtonTrigger() {
-    if (constants.search.value === "") {
-        alert("enter a word")
-    } else {
-        // save input value to localStorage
-        Storage.add("searchWord", constants.search.value)
-    
-        // open new window
-        window.open('/search.html', '_blank')
-
-        //empty input field
-        search.value = "";
-    }
-}
-
 // // open movie on new page
 // function movieInfo(e) {
 //     e.target.
@@ -119,14 +103,14 @@ document.addEventListener('DOMContentLoaded', function() {
   }, false);
   
 
-// run on click
+// run search on click
 constants.searchBtn.addEventListener('click', (e) => {
     e.preventDefault();
 
     searchButtonTrigger()
 })
 
-// run on enter
+// run search on enter
 constants.search.addEventListener('keyup', function (e) {
     if (e.key === 'Enter') {
 
