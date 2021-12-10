@@ -105,7 +105,7 @@ export function singleMovie(url, title, date, runtime, tagline, overview, genre,
                     <h4>Overview</h4>
                     <p id="overview">${overview}</div>
                 <div class="now-action">
-                    <button type="button" id="like-button" class="selected">
+                    <button type="button" id="like-button" onclick="like(event)">
                         <svg class="heart-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M91.6 13A28.7 28.7 0 0 0 51 13l-1 1-1-1A28.7 28.7 0 0 0 8.4 53.8l1 1L50 95.3l40.5-40.6 1-1a28.6 28.6 0 0 0 0-40.6z"/></svg>
                     </button>
                     <div class="now-trailer">
@@ -135,7 +135,7 @@ export function recCard(url, date, title, vote, id) {
                     <ul class="movie-meta">
                         <li id=year class=year><i class="far fa-calendar-alt"></i> ${date}</li>
                         <li id=like class=like>
-                            <button type="button" id="like-button">
+                            <button type="button" id="like-button" onclick="like(event)">
                                 <svg class="heart-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M91.6 13A28.7 28.7 0 0 0 51 13l-1 1-1-1A28.7 28.7 0 0 0 8.4 53.8l1 1L50 95.3l40.5-40.6 1-1a28.6 28.6 0 0 0 0-40.6z"/></svg>
                             </button>
                         </li>

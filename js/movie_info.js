@@ -98,11 +98,17 @@ constants.menuToggle.addEventListener('click', () => toggler())
 // smallSearch toggle
 constants.smallSearchBtn.addEventListener('click', () => seachInputToggle())
 
+//like button   IT DID NOT WORK 
+// function like(event) {
+//     console.log('pressed', event)
+
+//     console.log(event.path[6])
+    
+//     //stopPropagation()
+//     event.path[6].preventDefault()
+//     event.target.parentElement.parentElement.classList.toggle('selected')
+// }
+
 // tell window that function exists
 window.goToInfo = goToInfo;
-
-//like button   IT DID NOT WORK
-// constants.likeButton.addEventListener('click', function() {
-//     //   window.lb = likeButton;
-//     likeButton.classList.toggle('selected')
-// })
+window.like = like
