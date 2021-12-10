@@ -39,7 +39,7 @@ async function singleMovieToUI() {
 
         constants.movieInfo.style = `
         background: linear-gradient(-45deg, rgb(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)),
-        url(${constants.backdropBig}${movData.backdrop_path}) top center /cover;
+        url(${constants.imgPathBig}${movData.backdrop_path}) top center /cover;
         `
 
     } catch (error) {
@@ -101,9 +101,8 @@ constants.smallSearchBtn.addEventListener('click', () => seachInputToggle())
 // tell window that function exists
 window.goToInfo = goToInfo;
 
-//like button
-var likeButton = document.querySelector('#like-button');
-    likeButton.addEventListener('click', function() {
-    //   window.lb = likeButton;
-    likeButton.classList.toggle('selected')
-})
+//like button   IT DID NOT WORK
+// constants.likeButton.addEventListener('click', function() {
+//     //   window.lb = likeButton;
+//     likeButton.classList.toggle('selected')
+// })
