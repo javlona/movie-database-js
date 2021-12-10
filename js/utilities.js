@@ -56,7 +56,7 @@ export class Storage {
 export const movieCard = (url, title, date, vote, id) => {
     return `<div onclick="goToInfo(${id})" class="card" data-id='${id}'>
                 <div class="card-img">
-                    <img src="${imgPath500+url}" alt="${title}">
+                    <img src="${imgPath500+url}" alt="${title}" loading="lazy">
                     <div class="vote rating best">
                         <p>${vote*10}<sup>%</sup></p>
                     </div>
