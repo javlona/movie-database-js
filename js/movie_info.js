@@ -99,15 +99,15 @@ constants.menuToggle.addEventListener('click', () => toggler())
 constants.smallSearchBtn.addEventListener('click', () => seachInputToggle())
 
 //like button   IT DID NOT WORK 
-// function like(event) {
-//     console.log('pressed', event)
+function like(event) {
+    console.log('pressed', event)
 
-//     console.log(event.path[6])
+    console.log(event.path[6])
     
-//     //stopPropagation()
-//     event.path[6].preventDefault()
-//     event.target.parentElement.parentElement.classList.toggle('selected')
-// }
+    //stopPropagation()
+    //event.path[6].preventDefault()
+    event.target.parentElement.parentElement.classList.toggle('selected')
+}
 
 // tell window that function exists
 window.goToInfo = goToInfo;
