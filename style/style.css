@@ -764,7 +764,7 @@ div::-webkit-scrollbar-thumb:hover {
 
 .movie-info .container {
     width: 100%;
-    padding: 0;
+    padding: 0 4rem;
 
 }
 
