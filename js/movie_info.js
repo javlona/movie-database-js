@@ -34,7 +34,7 @@ async function singleMovieToUI() {
         let response = await fetch(movieUrl)
         let movData = await response.json()
 
-        let movie = singleMovie(movData.poster_path, movData.title, movData.release_date, movData.runtime, movData.tagline, movData.overview, movData.genres, movData.id)
+        let movie = singleMovie(movData.poster_path, movData.title, movData.release_date, movData.runtime, movData.tagline, movData.overview, movData.genres, movData.id, movData.vote_average)
         constants.posterContainer.innerHTML = movie
 
         constants.movieInfo.style = `
@@ -98,7 +98,7 @@ constants.menuToggle.addEventListener('click', () => toggler())
 // smallSearch toggle
 constants.smallSearchBtn.addEventListener('click', () => seachInputToggle())
 
-//like button   IT DID NOT WORK 
+//like button
 function like(event) {
     console.log('pressed', event)
 

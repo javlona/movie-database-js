@@ -52,7 +52,7 @@ async function fetchNowPlaying() {
         let res = await fetch(movieUrl)
         let movData = await res.json()
 
-        let movie = singleMovie(movData.poster_path, movData.title, movData.release_date, movData.runtime, movData.tagline, movData.overview, movData.genres, movData.id)
+        let movie = singleMovie(movData.poster_path, movData.title, movData.release_date, movData.runtime, movData.tagline, movData.overview, movData.genres, movData.id, movData.vote_average)
         constants.nowPlaying.innerHTML = movie
 
         // change background with backdrop image
@@ -130,4 +130,16 @@ function goToInfo(id) {
     window.open("/movie-info.html", "_self")
 }
 
+//like button
+function like(event) {
+    console.log('pressed', event)
+
+    console.log(event.path[6])
+    
+    //stopPropagation()
+    //event.path[6].preventDefault()
+    event.target.parentElement.parentElement.classList.toggle('selected')
+}
+
 window.goToInfo = goToInfo;
+window.like = like;
