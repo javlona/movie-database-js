@@ -73,7 +73,7 @@ export const searchCard = (url, title, date, overview, id, info) => {
     console.log(info, id);
     return `<div onclick="goToInfo(${id})" class="card-long">
                 <div class="card-img">
-                    <img src="${imgPath500+url}" alt="${title}">
+                    <img src="${imgPath500+url}" alt="${title}" loading="lazy">
                 </div>
                 <div class="card-details">
                     <div class="title">
@@ -127,7 +127,7 @@ export function singleMovie(url, title, date, runtime, tagline, overview, genre,
 // movie credits cards ui
 export function peopleCard(url, orgName, character) {
     return `<div class="card-people">
-                <img src="${imgPath138+url}" alt="${orgName}">
+                <img src="${imgPath138+url}" alt="${orgName}" loading="lazy">
                 <div class="card-content">
                     <p class=name id=name>${orgName}</p>
                     <p class=cast-name id="castName">${character}</p>
@@ -140,7 +140,7 @@ export function peopleCard(url, orgName, character) {
 export function recCard(url, date, title, vote, id) {
     return `<div onclick="goToInfo(${id})" class="card-rec">
                 <div class="image-content">
-                    <img src="${backdrop250+url}" alt="${title}">
+                    <img src="${backdrop250+url}" alt="${title}" loading="lazy">
                     <ul class="movie-meta">
                         <li id=year class=year><i class="far fa-calendar-alt"></i> ${date}</li>
                         <li id=like class=like>
