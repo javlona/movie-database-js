@@ -446,6 +446,7 @@ nav ul.links a:hover {
 
 .now-action {
     margin-top: 2rem;
+    margin-bottom: 1rem;
     display: flex;
     gap: 1rem;
     align-items: center;

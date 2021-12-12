@@ -59,7 +59,7 @@ export class Storage {
 export const movieCard = (url, title, date, vote, id) => {
     return `<div onclick="goToInfo(${id})" class="card" data-id='${id}'>
                 <div class="card-img">
-                    <img src="${imgPath500+url}" alt="${title}" loading="lazy">
+                    <img src="${imgPath500+url}" alt="${title}" loading="lazy" onerror="this.onerror=null;this.src='images/no-image-150x225.png';">
                     <div class="vote rating best">
                         <p>${vote*10}<sup>%</sup></p>
                     </div>
@@ -76,7 +76,7 @@ export const searchCard = (url, title, date, overview, id, info) => {
     console.log(info, id);
     return `<div onclick="goToInfo(${id})" class="card-long">
                 <div class="card-img">
-                    <img src="${imgPath500+url}" alt="${title}" loading="lazy">
+                    <img src="${imgPath500+url}" alt="${title}" loading="lazy" onerror="this.onerror=null;this.src='images/no-image-92x140.png';">
                 </div>
                 <div class="card-details">
                     <div class="title">
@@ -130,7 +130,7 @@ export function singleMovie(url, title, date, runtime, tagline, overview, genre,
 // movie credits cards ui
 export function peopleCard(url, orgName, character) {
     return `<div class="card-people">
-                <img src="${imgPath138+url}" alt="${orgName}" loading="lazy">
+                <img src="${imgPath138+url}" alt="${orgName}" loading="lazy" onerror="this.onerror=null;this.src='images/no-image-140x177.png';">
                 <div class="card-content">
                     <p class=name id=name>${orgName}</p>
                     <p class=cast-name id="castName">${character}</p>
