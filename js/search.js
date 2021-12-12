@@ -2,7 +2,8 @@ import {
     searchCard,
     searchMovieUrl,
     toggler,
-    Storage
+    Storage,
+    searchTvShowsUrl
 } from "./utilities.js"
 import * as constants from './constants.js'
 
@@ -10,14 +11,26 @@ function getSearchedWord() {
     return Storage.get("searchWord")
 }
 
-// fetch search API
+// fetch search movie API
 async function fetchSearchMovie(key) {
-    const searchUrl = searchMovieUrl(constants.API_KEY, key)
+    const url = searchMovieUrl(constants.API_KEY, key)
 
     try {
-        let response = await fetch(searchUrl)
+        let response = await fetch(url)
         return await response.json()
 
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+// fetch search TV show API
+async function fetchSearchTVShows(key) {
+    const searchTvUrl = searchTvShowsUrl(constants.API_KEY, key)
+
+    try {
+        let response = await fetch(searchTvUrl)
+        return await response.json()
     } catch (error) {
         console.log(error)
     }
@@ -27,15 +40,12 @@ async function fetchSearchMovie(key) {
 async function showSearched(query) {
 
     let response = await fetchSearchMovie(query ? query : getSearchedWord())
-    console.log(response.results)
     searchResults.innerHTML = ""
-    console.log(response)
 
     response.results.forEach((item) => {
         let card = searchCard(item.poster_path, item.title, item.release_date, item.overview, item.id, goToInfo)
         searchResults.innerHTML += card
     })
-
 }
 
 // load searched word
@@ -45,7 +55,6 @@ window.addEventListener('load', () => {
     showSearched()
 })
 
-
 // run on enter
 constants.search.addEventListener('keyup', function (e) {
     if (e.key === 'Enter') {
@@ -54,7 +63,6 @@ constants.search.addEventListener('keyup', function (e) {
         Storage.add("searchWord", search.value)
     }
 })
-
 
 // toggle menu by setting data-visible to true
 constants.menuToggle.addEventListener('click', () => toggler())

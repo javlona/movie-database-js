@@ -25,6 +25,9 @@ export const sliderCast = document.querySelector('.cast .slider')
 export const posterContainer = document.querySelector('#poster-container')
 export const movieInfo = document.querySelector('.movie-info')
 export const likeButton = document.querySelector('#like-button')
+export const searchMoviesBtn = document.querySelector('#searchMoviesBtn')
+export const searchShowsBtn = document.querySelector('#searchShowsBtn')
+export const searchPeopleBtn = document.querySelector('#searchPeopleBtn')
 
 // get random number to randomize first 5 pages
 export const FIRST_5_PAGES = 5;

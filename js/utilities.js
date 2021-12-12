@@ -19,6 +19,9 @@ export let singleMovieUrl = (api, id) => `https://api.themoviedb.org/3/movie/${i
 // search movie url
 export let searchMovieUrl = (api, key) => `https://api.themoviedb.org/3/search/movie?api_key=${api}&language=en-US&query=${key}`
 
+// search tv shows url
+export const searchTvShowsUrl = (api, key) => `https://api.themoviedb.org/3/search/tv?api_key=${api}&language=en-US&page=1&query=${key}&include_adult=false`
+
 // movie credits url
 export let creditsUrl = (id) => `https://api.themoviedb.org/3/movie/${id}/credits?api_key=${constants.API_KEY}&language=en-US`
 
