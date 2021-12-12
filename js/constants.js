@@ -27,6 +27,7 @@ export const likeButton = document.querySelector('#like-button')
 export const searchMoviesBtn = document.querySelector('#searchMoviesBtn')
 export const searchShowsBtn = document.querySelector('#searchShowsBtn')
 export const searchPeopleBtn = document.querySelector('#searchPeopleBtn')
+export const popularResults = document.querySelector('#popularResults')
 
 // get random number to randomize first 5 pages
 export const FIRST_5_PAGES = 5;
@@ -35,13 +36,13 @@ export const FIRST_5_PAGES = 5;
 export const NINETEEN = 19;
 
 // random numbers for url
-let random5 = randomPage(1, FIRST_5_PAGES) // random pages from 1 to 5
-let random2 = randomPage(1, 2)
+export let random5 = randomPage(1, FIRST_5_PAGES) // random pages from 1 to 5
+export let random2 = randomPage(1, 2)
 export let random20 = randomPage(0, NINETEEN) // random movie between 0 to 19
 
 // API url 
 export const API_KEY = '5b1b515986ab2e1bc528fe6b762fd9a9'
-export const popularUrl = `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=en-US&page=${random5}`
+//export const popularUrl = `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=en-US&page=${random5}`
 export const nowPlayingUrl = `https://api.themoviedb.org/3/movie/now_playing?api_key=${API_KEY}&language=en-US&page=${random2}`
 export const trendingUrl = `https://api.themoviedb.org/3/trending/movie/week?api_key=${API_KEY}`
 export const popularTvUrl = `https://api.themoviedb.org/3/tv/popular?api_key=${API_KEY}&language=en-US&page=${random2}`

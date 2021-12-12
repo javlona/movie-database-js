@@ -15,7 +15,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- scripts -->
-    <script type="module" src="js/search.js" defer></script>
+    <script type="module" src="js/movies.js" defer></script>
 
     <!-- title -->
     <title>Movie DataBase App - Movies</title>
@@ -30,8 +30,8 @@
             <div class="nav-left flex">
                 <a href="/index.html" class="logo"><img src="images/logo-film.png" alt="movie-film-logo">MyMDB</a>
                 <ul class="links flex" data-visible="false">
-                    <li><a href="#!">Movies</a></li>
-                    <li><a href="#!">Popular</a></li>
+                    <li><a href="/movies.html">Movies</a></li>
+                    <li><a href="#">TV Shows</a></li>
                     <li><a href="#!">Trending</a></li>
                     <li><a href="#!">Now Playing</a></li>
                 </ul>
@@ -52,22 +52,38 @@
     </nav>
 
     <!-- MAIN -->
-    <main class="search">
+    <main class="search movies">
         <div class="container flex">
             <div class="search-cat">
                 <div class="heading">
-                    <h3>Search Results</h3>
+                    <h3>Categories</h3>
                 </div>
                 <div class="side-menu">
                     <ul>
-                        <li id="searchMoviesBtn"><a href="">Movies</a></li>
+                        <li id="searchMoviesBtn"><a href="">Popular</a></li>
                         <li id="searchShowsBtn"><a href="">TV Shows</a></li>
-                        <li id="searchPeopleBtn"><a href="">People</a></li>
+                        <li id="searchPeopleBtn"><a href="">Top Rated</a></li>
                     </ul>
                 </div>
             </div>
-            <div class="search-results" id="searchResults">
+            <div class="movies-cards" id="popularResults">
                 <!-- search results fetched here -->
+                
             </div>
         </div>
     </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container flex">
+            <a href="#!" class="logo"><img src="images/logo-film.png" alt="movie-film-logo">MyMDB</a>
+            <p>For educational purposes &#128218;</p>
+            <p>Made by <a href="https://javlon.net" target="_blank">Javlon.net</a> &#10084;&#65039;
+            </p>
+            <a href="https://github.com/javlona/myMDB-js" target="_blank">give it a star on Github &#11088;</a>
+        </div>
+    </footer>
+    
+</body>
+
+</html>

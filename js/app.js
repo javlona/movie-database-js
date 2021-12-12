@@ -1,5 +1,6 @@
 import * as constants from './constants.js'
 import {
+    popularUrl,
     singleMovieUrl,
     movieCard,
     getGenre,
@@ -15,12 +16,12 @@ import {
 async function fetchPopular() {
 
     try {
-        let response = await fetch(constants.popularUrl)
+        let response = await fetch(popularUrl("movie",constants.API_KEY,constants.random2))
         let popularData = await response.json()
 
         popularData.results.forEach((item) => {
 
-            let card = movieCard(item.poster_path, item.title, item.release_date, item.vote_average, item.id)
+            let card = movieCard(item.poster_path, item.title, item.release_date, item.vote_average, item.id, "card")
             constants.sliderPopular.innerHTML += card
         })
 
@@ -76,7 +77,7 @@ async function fetchTrending() {
         console.log(trendingData)
         // get fetched data into cards
         trendingData.results.forEach((item) => {
-            let card = movieCard(item.poster_path, item.title, item.release_date, item.vote_average, item.id)
+            let card = movieCard(item.poster_path, item.title, item.release_date, item.vote_average, item.id, "card")
             constants.sliderTrending.innerHTML += card
         })
 
@@ -99,7 +100,6 @@ document.addEventListener('DOMContentLoaded', function () {
 // run search on click
 constants.searchBtn.addEventListener('click', (e) => {
     e.preventDefault();
-
     searchButtonTrigger()
 })
 

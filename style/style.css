@@ -1000,6 +1000,117 @@ div::-webkit-scrollbar-thumb:hover {
 }
 
 
+/* MOVIES */
+.movies {
+    padding-bottom: 4rem;
+}
+
+.movies .heading {
+    background: #58d0ff;
+}
+
+.movies-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 1.5rem;
+}
+
+.card-tall {
+    height: auto;
+    /* width: 18rem; */
+    maX-width: 18rem;
+    flex-shrink: 0;
+    z-index: 1;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 0 0 8px 8px;
+    margin-bottom: 1rem;
+}
+
+.card-tall .card-img {
+    position: relative;
+}
+
+.card-tall .card-img img {
+    border-radius: 8px 8px 0px 0px;
+}
+
+.card-tall .card-content {
+    padding: 0 1rem .5rem;
+}
+
+.card-tall .card-content h3 {
+    font-size: 1.6rem;
+    margin-top: 2rem;
+}
+
+.card-tall .card-content p {
+    font-size: 1.5rem;
+    margin-top: .5rem;
+    color: var(--color-text-grey);
+}
+
+.vote {
+    position: absolute;
+    bottom: -10px;
+    right: 2rem;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    height: 35px;
+    background: #333;
+    border-radius: 50%;
+}
+
+.rating {
+    position: absolute;
+    bottom: -10px;
+    right: 2rem;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    z-index: 8;
+}
+
+.best {
+    box-shadow: 0px 0px 0 2px inset var(--70-above), 0px 0px 0 3px #333;
+}
+
+.good {
+    box-shadow: 0px 0px 0 2px inset var(--60-above), 0px 0px 0 3px #333;
+}
+
+.worse {
+    box-shadow: 0px 0px 0 2px inset var(--60-below), 0px 0px 0 3px #333;
+}
+
+.vote p {
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: #fff;
+    z-index: 9;
+}
+
+.vote sup {
+    font-size: .5rem;
+}
+
+
+.trending h2,
+.popular h2 {
+    padding-inline: 4rem;
+}
+
+.card-img img,
+.card-content h3,
+.now-left img,
+.now-right h1 {
+    cursor: pointer;
+}
+
+
+
 /* ---- RESPONSIVE ---- */
 
 @media (max-width: 992px) {

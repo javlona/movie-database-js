@@ -13,6 +13,9 @@ export function randomPage(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min); //The maximum is inclusive and the minimum is inclusive
 }
 
+// popular url of movies and tv shows
+export let popularUrl = (type, api, page=1) => `https://api.themoviedb.org/3/${type}/popular?api_key=${api}&language=en-US&page=${page}`
+
 // single movie url
 export let singleMovieUrl = (api, id) => `https://api.themoviedb.org/3/movie/${id}?api_key=${api}&language=en-US`
 
@@ -27,6 +30,8 @@ export let creditsUrl = (id) => `https://api.themoviedb.org/3/movie/${id}/credit
 
 // similar(recommendation) movies url
 export let recommendationUrl = (id) => `https://api.themoviedb.org/3/movie/${id}/similar?api_key=${constants.API_KEY}&language=en-US&page=1`
+
+
 
 
 // check if there is genre in movie details
@@ -56,8 +61,8 @@ export class Storage {
 
 
 // movie card ui function
-export const movieCard = (url, title, date, vote, id) => {
-    return `<div onclick="goToInfo(${id})" class="card" data-id='${id}'>
+export const movieCard = (url, title, date, vote, id, type) => {
+    return `<div onclick="goToInfo(${id})" class="${type}" id="card" data-id='${id}'>
                 <div class="card-img">
                     <img src="${imgPath500+url}" alt="${title}" loading="lazy" onerror="this.onerror=null;this.src='images/no-image-150x225.png';">
                     <div class="vote rating best">
@@ -70,6 +75,9 @@ export const movieCard = (url, title, date, vote, id) => {
                 </div>
             </div>`
 }
+
+// big cards for movies.html
+//export const moviesBigCard = (url, title,)
 
 // search result card ui 
 export const searchCard = (url, title, date, overview, id, info) => {
