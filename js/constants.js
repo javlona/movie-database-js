@@ -1,6 +1,5 @@
 import {randomPage} from "./utilities.js"
 
-
 // DOM elements
 export const search = document.querySelector('#search')
 export const searchBtn = document.querySelector('#searchBtn')
