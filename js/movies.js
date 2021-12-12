@@ -1,7 +1,7 @@
 import * as constants from './constants.js'
 import {popularUrl, movieCard, goToInfo } from './utilities.js'
 
-let page = 1;
+let page;
 let mediaType = "movie";
 
 // fetch popular into cards
@@ -25,6 +25,7 @@ async function fetchPopular(mediaType, name, date) {
 // categories side menu movies
 constants.searchMoviesBtn.addEventListener('click', () => {
     constants.popularResults.innerHTML = ""
+    page = 1;
     mediaType = "movie"
     fetchPopular(mediaType, "title", "release_date")
 })
