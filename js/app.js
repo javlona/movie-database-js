@@ -132,12 +132,6 @@ function goToInfo(id) {
 
 //like button
 function like(event) {
-    console.log('pressed', event)
-
-    console.log(event.path[6])
-    
-    //stopPropagation()
-    //event.path[6].preventDefault()
     event.target.parentElement.parentElement.classList.toggle('selected')
 }
 

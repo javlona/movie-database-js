@@ -10,7 +10,6 @@ export const sliderTrending = document.querySelector('#trending')
 export const nowPlaying = document.querySelector('.now-playing .container')
 export const nowImage = document.querySelector('#now-image')
 export const nowTitle = document.querySelector('#now-title')
-export const pg = document.querySelector('#pg')
 export const nowRelYear = document.querySelector('#nowRelYear')
 export const nowGenre = document.querySelector('#nowGenre')
 export const nowDuration = document.querySelector('#nowDuration')
@@ -26,8 +25,9 @@ export const movieInfo = document.querySelector('.movie-info')
 export const likeButton = document.querySelector('#like-button')
 export const searchMoviesBtn = document.querySelector('#searchMoviesBtn')
 export const searchShowsBtn = document.querySelector('#searchShowsBtn')
-export const searchPeopleBtn = document.querySelector('#searchPeopleBtn')
+export const searchTopRatedBtn = document.querySelector('#searchTopRatedBtn')
 export const popularResults = document.querySelector('#popularResults')
+export const tvShowNav = document.querySelector('#tvShowNav')
 
 // get random number to randomize first 5 pages
 export const FIRST_5_PAGES = 5;

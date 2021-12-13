@@ -28,7 +28,7 @@ export let creditsUrl = (id) => `https://api.themoviedb.org/3/movie/${id}/credit
 // similar(recommendation) movies url
 export let recommendationUrl = (id) => `https://api.themoviedb.org/3/movie/${id}/similar?api_key=${constants.API_KEY}&language=en-US&page=1`
 
-
+export let topRatedUrl = (type, api, page=1) => `https://api.themoviedb.org/3/${type}/top_rated?api_key=${api}&language=en-US&page=${page}`
 
 
 // check if there is genre in movie details
