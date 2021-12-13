@@ -201,8 +201,6 @@ export function seachInputToggle() {
     document.querySelector('input').focus()
 }
 
-// like button
-
 //
 export function goToInfo(id) {
     Storage.add("movie", id)
