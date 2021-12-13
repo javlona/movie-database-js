@@ -3,7 +3,6 @@ import {
     searchMovieUrl,
     toggler,
     Storage,
-    searchTvShowsUrl
 } from "./utilities.js"
 import * as constants from './constants.js'
 
@@ -11,26 +10,16 @@ function getSearchedWord() {
     return Storage.get("searchWord")
 }
 
-// fetch search movie API
+let mediaType = "movie"
+
+// fetch search API by media type
 async function fetchSearchMovie(key) {
-    const url = searchMovieUrl(constants.API_KEY, key)
+    const url = searchMovieUrl(mediaType, constants.API_KEY, key)
 
     try {
         let response = await fetch(url)
         return await response.json()
 
-    } catch (error) {
-        console.log(error)
-    }
-}
-
-// fetch search TV show API
-async function fetchSearchTVShows(key) {
-    const searchTvUrl = searchTvShowsUrl(constants.API_KEY, key)
-
-    try {
-        let response = await fetch(searchTvUrl)
-        return await response.json()
     } catch (error) {
         console.log(error)
     }

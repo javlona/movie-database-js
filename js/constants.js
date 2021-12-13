@@ -42,11 +42,8 @@ export let random20 = randomPage(0, NINETEEN) // random movie between 0 to 19
 
 // API url 
 export const API_KEY = '5b1b515986ab2e1bc528fe6b762fd9a9'
-//export const popularUrl = `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=en-US&page=${random5}`
 export const nowPlayingUrl = `https://api.themoviedb.org/3/movie/now_playing?api_key=${API_KEY}&language=en-US&page=${random2}`
 export const trendingUrl = `https://api.themoviedb.org/3/trending/movie/week?api_key=${API_KEY}`
-export const popularTvUrl = `https://api.themoviedb.org/3/tv/popular?api_key=${API_KEY}&language=en-US&page=${random2}`
-
 
 // image paths
 export const imgPath138 = 'https://image.tmdb.org/t/p/w138_and_h175_face/'

@@ -1,7 +1,7 @@
 import * as constants from './constants.js'
 import {popularUrl, movieCard, goToInfo } from './utilities.js'
 
-let page;
+let page = 1;
 let mediaType = "movie";
 
 // fetch popular into cards
