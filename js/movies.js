@@ -39,6 +39,8 @@ async function fetchTopRated(mediaType, name, date) {
     }
 }
 
+
+
 constants.tvShowNav.addEventListener('click', () => {
     constants.popularResults.innerHTML = ""
     mediaType = "tv"
@@ -95,4 +97,4 @@ window.addEventListener('load', () => {
     fetchPopular("movie", "title", "release_date" )
 })
 
-window.goToInfo = goToInfo  
+window.goToInfo = goToInfo

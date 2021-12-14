@@ -84,7 +84,6 @@ async function fetchTrending() {
     } catch (error) {
         console.log(error)
     }
-
 }
 
 //like button
