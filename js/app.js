@@ -105,7 +105,6 @@ constants.searchBtn.addEventListener('click', (e) => {
 // run search on enter
 constants.search.addEventListener('keyup', function (e) {
     if (e.key === 'Enter') {
-
         searchButtonTrigger()
     }
 })
