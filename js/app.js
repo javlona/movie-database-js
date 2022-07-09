@@ -111,7 +111,6 @@ constants.search.addEventListener('keyup', function (e) {
 
 // load cards on DOM
 window.addEventListener('load', () => {
-
     fetchNowPlaying()
     fetchPopular()
     fetchTrending()
